@@ -1,4 +1,4 @@
-# BBsurvey Builder for builder survey
+# BBsurvey Builder for builder survey (bêta)
 BBsurvey is a jQuery Javascript plugin help to build custom forms generator or survey
 BBsurvey provides 
 - A wide array of options to custom the types of questions proposed and give for each one wide list of attribute 
