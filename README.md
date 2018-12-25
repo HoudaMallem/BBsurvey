@@ -3,7 +3,7 @@ BBsurvey is a jQuery Javascript plugin help to build custom forms generator or s
 BBsurvey provides 
 - A wide array of options to custom the types of questions proposed and give for each one wide list of attribute 
 - easy handling ,display data with defferente way 
- [![Bootstrap](https://getbootstrap.com/docs/4.2/assets/brand/bootstrap-social.png)](https://getbootstrap.com/)
+ [![Bootstrap]()](https://getbootstrap.com/)
 
 # Install
 npm
