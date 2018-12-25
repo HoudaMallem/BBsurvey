@@ -4,9 +4,9 @@ BBsurvey provides
 - A wide array of options to custom the types of questions proposed and give for each one wide list of attribute 
 - easy handling ,display data with defferente way 
 
- jQuery , jQuery UI
- Bootstrap (https://getbootstrap.com/)
- Requirejs
+####### jQuery , jQuery UI
+####### Bootstrap (https://getbootstrap.com/)
+####### Requirejs
 
 # Install
 npm
