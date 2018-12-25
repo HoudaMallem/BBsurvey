@@ -1,6 +1,6 @@
 {
   "name": "bbsurvey",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "jQuery Javascript plugin to build custom forms generator or survey",
   "main": "index.js",
   "scripts": {
