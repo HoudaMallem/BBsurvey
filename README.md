@@ -58,7 +58,7 @@ npm
 #### Parameters of fields
     - label : Label of field ,
     - name : name of field must be unique ,
-    - type: type of champ  [Select , Text , Date , Number , Multi , Boolean ] , 
+    - type: type of champ  [Select , Text , Date , Number , Multi , Boolean , File ] , 
     - color : [badge-secondary , badge-success , badge-danger, badge-warning , badge-info , badge-primary] by default badge-primary
     - icon : @fortawesome icones by default 'fa-list-alt',
     - attributes :[] Liste of attribute add to all fields
