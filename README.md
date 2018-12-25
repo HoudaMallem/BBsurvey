@@ -15,12 +15,17 @@ npm
 # Usage
 - header 
 ```html
-           <!-- Bootstrap CSS -->
-       <link rel="stylesheet" type="text/css" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
-       <!-- fontawesome CSS -->
-       <link rel="stylesheet" type="text/css" href="../node_modules/@fortawesome/fontawesome-free/css/all.css">
-         <!-- BBsurvey bbsurvey -->
-       <script  src="../js/BBsurvey.js" ></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../bootstrap/dist/css/bootstrap.min.css">
+    <!-- OR CDN Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- fontawesome CSS -->
+    <link rel="stylesheet" type="text/css" href="../../@fortawesome/fontawesome-free/css/all.css">
+    <!-- OR Font Awesome's Free CDN  -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+    <!-- BBsurvey bbsurvey -->
+    <script  src="../js/BBsurvey.js" ></script>
 ```
 - html
 ```html
