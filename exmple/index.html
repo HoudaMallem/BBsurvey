@@ -2,31 +2,235 @@
 <html  charset="utf-8" >
     <head>
             <!-- Bootstrap CSS -->
-       <link rel="stylesheet" type="text/css" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
        
-       <link rel="stylesheet" type="text/css" href="../node_modules/@fortawesome/fontawesome-free/css/all.css">
 
-       <script  src="../js/BBsurvey.js" ></script>
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+     
+       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+      
+       <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+      
+      
+       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
         <title>Builder Survey</title>
 
     </head>
-  <body class="bg-light">
+  <body >
     <div class="container-fluid" >
-<h2> <a href="simple.html"  target=_blank > Simple survey </a></h2>
-<strong>Change order of topics and questions with dragdrop  </strong><br/>
-<img src="images/orderQues.gif"  width="300"/><br/>
-<img src="images/orderTopic.gif" width="300" /><br/>
-<strong>change name topics </strong><br/>
-<img src="images/changeTopicName.gif" width="300" />
-<strong></strong>
-<H2> <a href="withTopics.html" target=_blank>  survey with pages (topics) </a></H2>
-<H2> <a href="getData.html" target=_blank> Get data of survey </a></H2>
-<H2> <a href="getDataTopics.html" target=_blank> Get data of survey with pages (topics) </a></H2>
-<H2> <a href="paramsFields.html" target=_blank> change colors and icons of fields  </a></H2>
-<H2> <a href="withDataWithoutTopicsLocal.html" target=_blank>  Display data of survey without topics local ressource </a></H2>
-<H2> <a href="withDataWithoutTopicsRemote.html" target=_blank>  Display data of survey without topics remote ressource </a></H2>
-<H2> <a href="withDataWithTopicsLocal.html" target=_blank>  Display data of survey with topics local ressource </a></H2>
-<H2> <a href="withDataWithTopicsRemote.html" target=_blank>  Display data of survey with topics remote ressource </a></H2>
+
+            <div class="row">
+                    <div class="col-3">
+                      <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        <a class="nav-link active" id="v-pills-simple-tab" data-toggle="pill" href="#v-pills-simple" role="tab" aria-controls="v-pills-home" aria-selected="true"> Simple survey</a>
+                        <a class="nav-link" id="v-pills-Stopics-tab" data-toggle="pill" href="#v-pills-Stopics" role="tab" aria-controls="v-pills-Stopics" aria-selected="false">survey with pages (topics)</a>
+                        <a class="nav-link" id="v-pills-datasimple-tab" data-toggle="pill" href="#v-pills-datasimple" role="tab" aria-controls="v-pills-datasimple" aria-selected="false">Get data of survey</a>
+                        <a class="nav-link" id="v-pills-datatopics-tab" data-toggle="pill" href="#v-pills-datatopics" role="tab" aria-controls="v-pills-datatopics" aria-selected="false">Get data of survey with pages (topics)</a>
+                        <a class="nav-link" id="v-pills-params-tab" data-toggle="pill" href="#v-pills-params" role="tab" aria-controls="v-pills-params" aria-selected="false">change colors and icons of fields</a>
+                        <a class="nav-link" id="v-pills-displaysimplelocal-tab" data-toggle="pill" href="#v-pills-displaysimplelocal" role="tab" aria-controls="v-pills-displaysimplelocal" aria-selected="false">Display record data of survey without topics local ressource </a>
+                        <a class="nav-link" id="v-pills-displaysimpleremote-tab" data-toggle="pill" href="#v-pills-displaysimpleremote" role="tab" aria-controls="v-pills-displaysimpleremote" aria-selected="false"> Display record data of survey without topics remote ressource</a>
+                        <a class="nav-link" id="v-pills-displaytopicslocal-tab" data-toggle="pill" href="#v-pills-displaytopicslocal" role="tab" aria-controls="v-pills-displaytopicslocal" aria-selected="false">Display record data of survey with topics local ressource </a>
+                        <a class="nav-link" id="v-pills-displaytopicsremote-tab" data-toggle="pill" href="#v-pills-displaytopicsremote" role="tab" aria-controls="v-pills-displaytopicsremote" aria-selected="false"> Display record data of survey with topics remote ressource</a>
+                        
+                    </div>
+                    </div>
+                    <div class="col-9">
+                      <div class="tab-content" id="v-pills-tabContent">
+                        <div class="tab-pane fade show active" id="v-pills-simple" role="tabpanel" aria-labelledby="v-pills-simple-tab">
+
+                                
+                                <ul class="nav nav-tabs" id="codes" role="tablist">
+                                        <li class="nav-item">
+                                          <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">HTML</a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">JAVASCRIPT</a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">DEMO</a>
+                                        </li>
+                                </ul>
+                                <div class="tab-content" id="myTabContent">
+                                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                            <code>
+                                                    &lt;charset="utf-8"&gt; <br/>
+                                                    &lt;head&gt; <br/>
+                                                    &lt;link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"&gt; <br/>
+                                                    &lt;link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"&gt; <br/>
+                                                    &lt;script  src="../js/BBsurvey.js"&gt; &lt;script&gt; <br/>
+                                                    &lt;title>Builder simple Survey &lt;title&gt; <br/>
+                                                    &lt;head&gt; <br/>
+                                                    &lt;body&gt; <br/>
+                                                    &lt;div class="container-fluid"&gt; <br/>
+                                                    &lt;div class="row" class="" id='bbsurvey'&gt; <br/>
+                                                    &lt;div class="col-md-3 justify-content-center" id='left-bbsurvey'&gt; <br/>
+                                                    &lt;div class="list-group" id='fields-bbsurvey'&gt; <br/>
+                                                    &lt;div&gt; <br/>
+                                                    &lt;div&gt; <br/>
+                                                    &lt;div class="col-md-9 border-left border-left-secondary " id='body-bbsurvey'&gt; <br/>
+                                                    &lt;div&gt; <br/>
+                                                    &lt;div&gt; <br/>
+                                                    &lt;div&gt; <br/>
+                                                    &lt;script type="text/JavaScript"   src="./script/simple.js" async&gt; &lt;script&gt; <br/>
+                                                    &lt;body&gt; <br/>
+                                                    &lt;html&gt;
+                                        </code>
+                         
+                                            
+                                    </div>
+                                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                            <pre class="prettyprint linenums lang-java">
+                                                    jQuery('#BBsurvey').survey({
+                                                        title : 'questionnare' ,
+                                                        hasTopics : false,
+                                                      attributes :[{
+                                                              label : 'Require',
+                                                              name : 'require',
+                                                              value: true , 
+                                                              type:'Boolean' 
+                                                            },{
+                                                              label : 'Discription',
+                                                              name : 'discription',
+                                                              value: '' , 
+                                                              type: 'Text'
+                                                            },{
+                                                              label : 'Related To',
+                                                              name : 'related',
+                                                              type:{
+                                                                name :'related',
+                                                                optionType : 'Select'
+                                                              }
+                                                            }
+                                                        ],
+                                                
+                                                        fields :[{
+                                                          label : 'Text Field' ,
+                                                          name : 'text',
+                                                          type: 'Text' , 
+                                                         // color : 'badge-danger',
+                                                        attributes :[{
+                                                            label : 'Uppercase Answer',
+                                                            name : 'uppercase',
+                                                            value : false , 
+                                                            type: 'Boolean'
+                                                          }
+                                                
+                                                          ]
+                                                        }
+                                                        ,{
+                                                          label : 'Date Field' ,
+                                                          name : 'date',
+                                                          type: 'Date' , 
+                                                          id : 'datedebut'
+                                                        },{
+                                                          label : 'Boolean Field' ,
+                                                          name : 'boolean',
+                                                          type: 'Boolean' , 
+                                                          id: 'boolean' 
+                                                        },{
+                                                          label : 'Number Field' ,
+                                                          name : 'number',
+                                                          type: 'Number' , 
+                                                          id: 'number' ,
+                                                          attributes :[
+                                                              {
+                                                                label : 'Maximum', 
+                                                                name : 'maximum',
+                                                                type: 'Number' , 
+                                                              },
+                                                              {
+                                                                label : 'Minimum', 
+                                                                name : 'minimum',
+                                                                type: 'Number' , 
+                                                              }
+                                                          ]
+                                                        },{
+                                                          label : 'File Field' ,
+                                                          name : 'photo',
+                                                          type: 'File' , 
+                                                          id: 'photo' ,
+                                                          attributes :[{
+                                                            label : 'Format Require',
+                                                            name : 'format',
+                                                            type:'Select' , 
+                                                            option:['pdf' ,'csv' , 'jpeg' , 'png' ]
+                                                          }
+                                                        ]
+                                                        },{
+                                                          label : 'Multi Response Field' ,
+                                                          name : 'multi',
+                                                          type: 'Multi' , 
+                                                          id: 'multi'
+                                                  
+                                                        },{
+                                                          label : 'Select Field' ,
+                                                          name : 'select',
+                                                          type: 'Select' , 
+                                                          attributes :[{
+                                                            label : 'Answer order by',
+                                                            name : 'orderby',
+                                                            type:'Select' , 
+                                                            option:['' , 'desc' , 'asc' ]
+                                                          }
+                                                        ]
+                                                        }
+                                                        
+                                                        ]
+                                                      });
+                                                </pre> 
+                                    </div>
+                                    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                                            <h2> <a href="simple.html"  target=_blank > demo </a></h2>
+                                            <strong>Change order of topics and questions with dragdrop  </strong><br/>
+                                            <img src="images/orderQues.gif"  width="300"/><br/>
+                                            <img src="images/orderTopic.gif" width="300" /><br/>
+                                            <strong>change name topics </strong><br/>
+                                            <img src="images/changeTopicName.gif" width="300" />
+                                     
+                                         
+                                    </div>
+                                </div>
+
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-Stopics" role="tabpanel" aria-labelledby="v-pills-Stopics-tab">
+
+                                <H2> <a href="withTopics.html" target=_blank>  survey with pages (topics) </a></H2>
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-datasimple" role="tabpanel" aria-labelledby="v-pills-datasimple-tab">
+                                <H2> <a href="getData.html" target=_blank> Get data of survey </a></H2>
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-datatopics" role="tabpanel" aria-labelledby="v-pills-datatopics-tab">
+
+                                <H2> <a href="getDataTopics.html" target=_blank> Get data of survey with pages (topics) </a></H2>
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-params" role="tabpanel" aria-labelledby="v-pills-params-tab">
+                                <H2> <a href="paramsFields.html" target=_blank> change colors and icons of fields  </a></H2>
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-displaysimplelocal" role="tabpanel" aria-labelledby="v-pills-displaysimplelocal-tab">
+                                <H2> <a href="withDataWithoutTopicsLocal.html" target=_blank>  Display data of survey without topics local ressource </a></H2>
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-displaysimpleremote" role="tabpanel" aria-labelledby="v-pills-displaysimpleremote-tab">
+                                <H2> <a href="withDataWithoutTopicsRemote.html" target=_blank>  Display data of survey without topics remote ressource </a></H2>
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-displaytopicslocal" role="tabpanel" aria-labelledby="v-pills-displaytopicslocal-tab">
+                                <H2> <a href="withDataWithTopicsLocal.html" target=_blank>  Display data of survey with topics local ressource </a></H2>
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-displaytopicsremote" role="tabpanel" aria-labelledby="v-pills-displaytopicsremote-tab">
+
+                            <H2> <a href="withDataWithTopicsRemote.html" target=_blank>  Display data of survey with topics remote ressource </a></H2>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+
+
+
+
+
 
   </div>
   
