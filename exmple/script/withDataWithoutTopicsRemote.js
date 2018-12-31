@@ -7,7 +7,7 @@
                         data: {
                           type: "remote" ,
                           source: {
-                            url: "https://jazairfone.com/api/dataQ.php" ,
+                            url: "http://houdamallem.ml/api/dataQ.php" ,
                             dataType : 'json'
                           }
                         },

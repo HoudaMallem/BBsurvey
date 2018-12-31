@@ -11,7 +11,8 @@ BBsurvey provides
 # Install
 npm
    - npm i bbsurvey
-
+# Documentation 
+<a href='http://houdamallem.ml/BBsurvey/exmple/'>Demo </a>
 # Usage
 - header 
 ```html

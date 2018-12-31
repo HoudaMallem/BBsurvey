@@ -6,15 +6,17 @@
        
 
             <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-     
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/default.min.css">
+
        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
       
-       <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-      
+
       
        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-        <title>Builder Survey</title>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+       <script> hljs.initHighlightingOnLoad();</script>
+       <title>Builder Survey</title>
 
     </head>
   <body >
@@ -23,7 +25,8 @@
             <div class="row">
                     <div class="col-3">
                       <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                        <a class="nav-link active" id="v-pills-simple-tab" data-toggle="pill" href="#v-pills-simple" role="tab" aria-controls="v-pills-home" aria-selected="true"> Simple survey</a>
+                        <a class="nav-link active" id="v-pills-start-tab" data-toggle="pill" href="#v-pills-start" role="tab" aria-controls="v-pills-home" aria-selected="true"> Get start </a>
+                        <a class="nav-link" id="v-pills-simple-tab" data-toggle="pill" href="#v-pills-simple" role="tab" aria-controls="v-pills-home" aria-selected="true"> Simple survey</a>
                         <a class="nav-link" id="v-pills-Stopics-tab" data-toggle="pill" href="#v-pills-Stopics" role="tab" aria-controls="v-pills-Stopics" aria-selected="false">survey with pages (topics)</a>
                         <a class="nav-link" id="v-pills-datasimple-tab" data-toggle="pill" href="#v-pills-datasimple" role="tab" aria-controls="v-pills-datasimple" aria-selected="false">Get data of survey</a>
                         <a class="nav-link" id="v-pills-datatopics-tab" data-toggle="pill" href="#v-pills-datatopics" role="tab" aria-controls="v-pills-datatopics" aria-selected="false">Get data of survey with pages (topics)</a>
@@ -37,7 +40,36 @@
                     </div>
                     <div class="col-9">
                       <div class="tab-content" id="v-pills-tabContent">
-                        <div class="tab-pane fade show active" id="v-pills-simple" role="tabpanel" aria-labelledby="v-pills-simple-tab">
+                            <div class="tab-pane fade show active" id="v-pills-start" role="tabpanel" aria-labelledby="v-pills-start-tab">
+
+                                
+                                    <ul class="nav nav-tabs" id="codes" role="tablist">
+                                            <li class="nav-item">
+                                              <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">HTML</a>
+                                            </li>
+                                    </ul>
+                                    <div class="tab-content" id="myTabContent">
+                                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+<figure class="highlight">     
+<pre class="prettyprint linenums lang-java">  
+<code class="language-html" data-lang="html">
+        
+&lt;head&gt; <br/>
+    &lt;link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"&gt; <br/>
+    &lt;link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"&gt; <br/>
+    &lt;script  src="../js/BBsurvey.js"&gt; &lt;script&gt; <br/>
+    &lt;title&gt;Builder simple Survey &lt;title&gt; <br/>
+&lt;head&gt; <br/>
+</code>
+
+</pre> 
+</figure>    
+                                        </div>
+
+                                    </div>
+    
+                            </div>
+                        <div class="tab-pane fade show" id="v-pills-simple" role="tabpanel" aria-labelledby="v-pills-simple-tab">
 
                                 
                                 <ul class="nav nav-tabs" id="codes" role="tablist">
@@ -53,131 +85,124 @@
                                 </ul>
                                 <div class="tab-content" id="myTabContent">
                                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                            <code>
-                                                    &lt;charset="utf-8"&gt; <br/>
-                                                    &lt;head&gt; <br/>
-                                                    &lt;link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"&gt; <br/>
-                                                    &lt;link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"&gt; <br/>
-                                                    &lt;script  src="../js/BBsurvey.js"&gt; &lt;script&gt; <br/>
-                                                    &lt;title>Builder simple Survey &lt;title&gt; <br/>
-                                                    &lt;head&gt; <br/>
-                                                    &lt;body&gt; <br/>
-                                                    &lt;div class="container-fluid"&gt; <br/>
-                                                    &lt;div class="row" class="" id='bbsurvey'&gt; <br/>
-                                                    &lt;div class="col-md-3 justify-content-center" id='left-bbsurvey'&gt; <br/>
-                                                    &lt;div class="list-group" id='fields-bbsurvey'&gt; <br/>
-                                                    &lt;div&gt; <br/>
-                                                    &lt;div&gt; <br/>
-                                                    &lt;div class="col-md-9 border-left border-left-secondary " id='body-bbsurvey'&gt; <br/>
-                                                    &lt;div&gt; <br/>
-                                                    &lt;div&gt; <br/>
-                                                    &lt;div&gt; <br/>
-                                                    &lt;script type="text/JavaScript"   src="./script/simple.js" async&gt; &lt;script&gt; <br/>
-                                                    &lt;body&gt; <br/>
-                                                    &lt;html&gt;
-                                        </code>
-                         
-                                            
+<figure class="highlight">     
+<pre class="prettyprint linenums lang-java">  
+<code class="language-html" data-lang="html">
+
+&lt;div class="row" class="" id='bbsurvey'&gt; <br/>
+    &lt;div class="col-md-3 justify-content-center" id='left-bbsurvey'&gt; <br/>
+        &lt;div class="list-group" id='fields-bbsurvey'&gt; &lt;div&gt; <br/>
+    &lt;div&gt; <br/>
+    &lt;div class="col-md-9 border-left border-left-secondary " id='body-bbsurvey'&gt; &lt;div&gt; <br/>
+&lt;div&gt; <br/>
+
+&lt;script type="text/JavaScript"   src="./script/simple.js" async&gt; &lt;script&gt; <br/>
+
+</code>
+
+</pre> 
+</figure>    
                                     </div>
                                     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                                             <pre class="prettyprint linenums lang-java">
-                                                    jQuery('#BBsurvey').survey({
-                                                        title : 'questionnare' ,
-                                                        hasTopics : false,
-                                                      attributes :[{
-                                                              label : 'Require',
-                                                              name : 'require',
-                                                              value: true , 
-                                                              type:'Boolean' 
-                                                            },{
-                                                              label : 'Discription',
-                                                              name : 'discription',
-                                                              value: '' , 
-                                                              type: 'Text'
-                                                            },{
-                                                              label : 'Related To',
-                                                              name : 'related',
-                                                              type:{
-                                                                name :'related',
-                                                                optionType : 'Select'
-                                                              }
-                                                            }
-                                                        ],
-                                                
-                                                        fields :[{
-                                                          label : 'Text Field' ,
-                                                          name : 'text',
-                                                          type: 'Text' , 
-                                                         // color : 'badge-danger',
-                                                        attributes :[{
-                                                            label : 'Uppercase Answer',
-                                                            name : 'uppercase',
-                                                            value : false , 
-                                                            type: 'Boolean'
-                                                          }
-                                                
-                                                          ]
-                                                        }
-                                                        ,{
-                                                          label : 'Date Field' ,
-                                                          name : 'date',
-                                                          type: 'Date' , 
-                                                          id : 'datedebut'
-                                                        },{
-                                                          label : 'Boolean Field' ,
-                                                          name : 'boolean',
-                                                          type: 'Boolean' , 
-                                                          id: 'boolean' 
-                                                        },{
-                                                          label : 'Number Field' ,
-                                                          name : 'number',
-                                                          type: 'Number' , 
-                                                          id: 'number' ,
-                                                          attributes :[
-                                                              {
-                                                                label : 'Maximum', 
-                                                                name : 'maximum',
-                                                                type: 'Number' , 
-                                                              },
-                                                              {
-                                                                label : 'Minimum', 
-                                                                name : 'minimum',
-                                                                type: 'Number' , 
-                                                              }
-                                                          ]
-                                                        },{
-                                                          label : 'File Field' ,
-                                                          name : 'photo',
-                                                          type: 'File' , 
-                                                          id: 'photo' ,
-                                                          attributes :[{
-                                                            label : 'Format Require',
-                                                            name : 'format',
-                                                            type:'Select' , 
-                                                            option:['pdf' ,'csv' , 'jpeg' , 'png' ]
-                                                          }
-                                                        ]
-                                                        },{
-                                                          label : 'Multi Response Field' ,
-                                                          name : 'multi',
-                                                          type: 'Multi' , 
-                                                          id: 'multi'
-                                                  
-                                                        },{
-                                                          label : 'Select Field' ,
-                                                          name : 'select',
-                                                          type: 'Select' , 
-                                                          attributes :[{
-                                                            label : 'Answer order by',
-                                                            name : 'orderby',
-                                                            type:'Select' , 
-                                                            option:['' , 'desc' , 'asc' ]
-                                                          }
-                                                        ]
-                                                        }
-                                                        
-                                                        ]
-                                                      });
+                                                    <code class="language-js" data-lang="js">
+    jQuery('#BBsurvey').survey({
+        title : 'questionnare' ,
+        hasTopics : false,
+        attributes :[{
+                label : 'Require',
+                name : 'require',
+                value: true , 
+                type:'Boolean' 
+            },{
+                label : 'Discription',
+                name : 'discription',
+                value: '' , 
+                type: 'Text'
+            },{
+                label : 'Related To',
+                name : 'related',
+                type:{
+                name :'related',
+                optionType : 'Select'
+                }
+            }
+        ],
+
+        fields :[{
+            label : 'Text Field' ,
+            name : 'text',
+            type: 'Text' , 
+        attributes :[{
+            label : 'Uppercase Answer',
+            name : 'uppercase',
+            value : false , 
+            type: 'Boolean'
+            }
+
+            ]
+        }
+        ,{
+            label : 'Date Field' ,
+            name : 'date',
+            type: 'Date' , 
+            id : 'datedebut'
+        },{
+            label : 'Boolean Field' ,
+            name : 'boolean',
+            type: 'Boolean' , 
+            id: 'boolean' 
+        },{
+            label : 'Number Field' ,
+            name : 'number',
+            type: 'Number' , 
+            id: 'number' ,
+            attributes :[
+                {
+                label : 'Maximum', 
+                name : 'maximum',
+                type: 'Number' , 
+                },
+                {
+                label : 'Minimum', 
+                name : 'minimum',
+                type: 'Number' , 
+                }
+            ]
+        },{
+            label : 'File Field' ,
+            name : 'photo',
+            type: 'File' , 
+            id: 'photo' ,
+            attributes :[{
+            label : 'Format Require',
+            name : 'format',
+            type:'Select' , 
+            option:['pdf' ,'csv' , 'jpeg' , 'png' ]
+            }
+        ]
+        },{
+            label : 'Multi Response Field' ,
+            name : 'multi',
+            type: 'Multi' , 
+            id: 'multi'
+    
+        },{
+            label : 'Select Field' ,
+            name : 'select',
+            type: 'Select' , 
+            attributes :[{
+            label : 'Answer order by',
+            name : 'orderby',
+            type:'Select' , 
+            option:['' , 'desc' , 'asc' ]
+            }
+        ]
+        }
+        
+        ]
+        });
+                                                      </code>
                                                 </pre> 
                                     </div>
                                     <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
@@ -187,38 +212,1208 @@
                                             <img src="images/orderTopic.gif" width="300" /><br/>
                                             <strong>change name topics </strong><br/>
                                             <img src="images/changeTopicName.gif" width="300" />
-                                     
-                                         
                                     </div>
                                 </div>
 
                         </div>
                         <div class="tab-pane fade" id="v-pills-Stopics" role="tabpanel" aria-labelledby="v-pills-Stopics-tab">
+                                <ul class="nav nav-tabs" id="codes" role="tablist">
+                                        <li class="nav-item">
+                                          <a class="nav-link active" id="html-tab" data-toggle="tab" href="#html" role="tab" aria-controls="html" aria-selected="true">HTML</a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link" id="javascript-tab" data-toggle="tab" href="#javascript" role="tab" aria-controls="javascript" aria-selected="false">JAVASCRIPT</a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link" id="demo-tab" data-toggle="tab" href="#demo" role="tab" aria-controls="demo" aria-selected="false">DEMO</a>
+                                        </li>
+                                </ul>
+                                <div class="tab-content" id="myTabContent">
+                                    <div class="tab-pane fade show active" id="html" role="tabpanel" aria-labelledby="html-tab">
+<figure class="highlight">     
+<pre class="prettyprint linenums lang-java">  
+<code class="language-html" data-lang="html">
 
-                                <H2> <a href="withTopics.html" target=_blank>  survey with pages (topics) </a></H2>
+&lt;div class="row" class="" id='bbsurvey'&gt; <br/>
+    &lt;div class="col-md-3 justify-content-center" id='left-bbsurvey'&gt; <br/>
+        &lt;div class="list-group" id='fields-bbsurvey'&gt; &lt;div&gt; <br/>
+    &lt;div&gt; <br/>
+    &lt;div class="col-md-9 border-left border-left-secondary " id='body-bbsurvey'&gt; &lt;div&gt; <br/>
+&lt;div&gt; <br/>
+
+&lt;script type="text/JavaScript"   src="./script/withTopics.js" async&gt; &lt;script&gt; <br/>
+
+</code>
+
+</pre> 
+</figure>    
+                                    </div>
+                                    <div class="tab-pane fade" id="javascript" role="tabpanel" aria-labelledby="javascript-tab">
+                                            <pre class="prettyprint linenums lang-java">
+                                                    <code class="language-js" data-lang="js">
+    jQuery('#BBsurvey').survey({
+        title : 'questionnare' ,
+        hasTopics : true,
+        attributes :[{
+                label : 'Require',
+                name : 'require',
+                value: true , 
+                type:'Boolean' 
+            },{
+                label : 'Discription',
+                name : 'discription',
+                value: '' , 
+                type: 'Text'
+            },{
+                label : 'Related To',
+                name : 'related',
+                type:{
+                name :'related',
+                optionType : 'Select'
+                }
+            }
+        ],
+
+        fields :[{
+            label : 'Text Field' ,
+            name : 'text',
+            type: 'Text' , 
+        attributes :[{
+            label : 'Uppercase Answer',
+            name : 'uppercase',
+            value : false , 
+            type: 'Boolean'
+            }
+
+            ]
+        }
+        ,{
+            label : 'Date Field' ,
+            name : 'date',
+            type: 'Date' , 
+            id : 'datedebut'
+        },{
+            label : 'Boolean Field' ,
+            name : 'boolean',
+            type: 'Boolean' , 
+            id: 'boolean' 
+        },{
+            label : 'Number Field' ,
+            name : 'number',
+            type: 'Number' , 
+            id: 'number' ,
+            attributes :[
+                {
+                label : 'Maximum', 
+                name : 'maximum',
+                type: 'Number' , 
+                },
+                {
+                label : 'Minimum', 
+                name : 'minimum',
+                type: 'Number' , 
+                }
+            ]
+        },{
+            label : 'File Field' ,
+            name : 'photo',
+            type: 'File' , 
+            id: 'photo' ,
+            attributes :[{
+            label : 'Format Require',
+            name : 'format',
+            type:'Select' , 
+            option:['pdf' ,'csv' , 'jpeg' , 'png' ]
+            }
+        ]
+        },{
+            label : 'Multi Response Field' ,
+            name : 'multi',
+            type: 'Multi' , 
+            id: 'multi'
+    
+        },{
+            label : 'Select Field' ,
+            name : 'select',
+            type: 'Select' , 
+            attributes :[{
+            label : 'Answer order by',
+            name : 'orderby',
+            type:'Select' , 
+            option:['' , 'desc' , 'asc' ]
+            }
+        ]
+        }
+        
+        ]
+        });
+                                                      </code>
+                                                </pre> 
+                                    </div>
+                                    <div class="tab-pane fade" id="demo" role="tabpanel" aria-labelledby="demo-tab">
+                                            <H2> <a href="withTopics.html" target=_blank> Demo </a></H2>
+                                    </div>
+                                </div>
+                  
                         </div>
                         <div class="tab-pane fade" id="v-pills-datasimple" role="tabpanel" aria-labelledby="v-pills-datasimple-tab">
-                                <H2> <a href="getData.html" target=_blank> Get data of survey </a></H2>
+                                         
+                                <ul class="nav nav-tabs" id="codes" role="tablist">
+                                        <li class="nav-item">
+                                          <a class="nav-link active" id="home1-tab" data-toggle="tab" href="#html1" role="tab" aria-controls="home1" aria-selected="true">HTML</a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link" id="javascript1-tab" data-toggle="tab" href="#javascript1" role="tab" aria-controls="javascript1" aria-selected="false">JAVASCRIPT</a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link" id="demo1-tab" data-toggle="tab" href="#demo1" role="tab" aria-controls="demo1" aria-selected="false">DEMO</a>
+                                        </li>
+                                </ul>
+                                <div class="tab-content" id="myTabContent">
+                                    <div class="tab-pane fade show active" id="html1" role="tabpanel" aria-labelledby="html1-tab">
+<figure class="highlight">     
+<pre class="prettyprint linenums lang-java">  
+<code class="language-html" data-lang="html">
+
+&lt;div class="row" class="" id='bbsurvey'&gt; <br/>
+    &lt;div class="col-md-3 justify-content-center" id='left-bbsurvey'&gt; <br/>
+        &lt;div class="list-group" id='fields-bbsurvey'&gt; &lt;div&gt; <br/>
+    &lt;div&gt; <br/>
+    &lt;div class="col-md-9 border-left border-left-secondary " id='body-bbsurvey'&gt; &lt;div&gt; <br/>
+&lt;div&gt; <br/>
+&lt;button type="button" class="btn" id='getdata'&gt; Get data &lt;button&gt;<br/>
+&lt;div  class="dataContainer col-12 border border-secondary" id='dataContainer'&gt;<br/>
+
+&lt;div&gt;<br/>
+&lt;script type="text/JavaScript"   src="./script/getData.js" async&gt; &lt;script&gt; <br/>
+
+</code>
+
+</pre> 
+</figure>    
+                                    </div>
+                                    <div class="tab-pane fade" id="javascript1" role="tabpanel" aria-labelledby="javascript1-tab">
+                                            <pre class="prettyprint linenums lang-java">
+                                                    <code class="language-js" data-lang="js">
+   var bbservey = jQuery('#BBsurvey').survey({
+        title : 'questionnare' ,
+        hasTopics : false,
+        attributes :[{
+                label : 'Require',
+                name : 'require',
+                value: true , 
+                type:'Boolean' 
+            },{
+                label : 'Discription',
+                name : 'discription',
+                value: '' , 
+                type: 'Text'
+            },{
+                label : 'Related To',
+                name : 'related',
+                type:{
+                name :'related',
+                optionType : 'Select'
+                }
+            }
+        ],
+
+        fields :[{
+            label : 'Text Field' ,
+            name : 'text',
+            type: 'Text' , 
+        attributes :[{
+            label : 'Uppercase Answer',
+            name : 'uppercase',
+            value : false , 
+            type: 'Boolean'
+            }
+
+            ]
+        }
+        ,{
+            label : 'Date Field' ,
+            name : 'date',
+            type: 'Date' , 
+            id : 'datedebut'
+        },{
+            label : 'Boolean Field' ,
+            name : 'boolean',
+            type: 'Boolean' , 
+            id: 'boolean' 
+        },{
+            label : 'Number Field' ,
+            name : 'number',
+            type: 'Number' , 
+            id: 'number' ,
+            attributes :[
+                {
+                label : 'Maximum', 
+                name : 'maximum',
+                type: 'Number' , 
+                },
+                {
+                label : 'Minimum', 
+                name : 'minimum',
+                type: 'Number' , 
+                }
+            ]
+        },{
+            label : 'File Field' ,
+            name : 'photo',
+            type: 'File' , 
+            id: 'photo' ,
+            attributes :[{
+            label : 'Format Require',
+            name : 'format',
+            type:'Select' , 
+            option:['pdf' ,'csv' , 'jpeg' , 'png' ]
+            }
+        ]
+        },{
+            label : 'Multi Response Field' ,
+            name : 'multi',
+            type: 'Multi' , 
+            id: 'multi'
+    
+        },{
+            label : 'Select Field' ,
+            name : 'select',
+            type: 'Select' , 
+            attributes :[{
+            label : 'Answer order by',
+            name : 'orderby',
+            type:'Select' , 
+            option:['' , 'desc' , 'asc' ]
+            }
+        ]
+        }
+        
+        ]
+        });
+var data =   bbservey.getData() ;
+$('#getdata').click(function() {
+    document.getElementById("dataContainer").innerHTML = JSON.stringify(data,  null, "\t");
+});
+                                                      </code>
+                                                </pre> 
+                                    </div>
+                                    <div class="tab-pane fade" id="demo1" role="tabpanel" aria-labelledby="demo1-tab">
+                                            <H2> <a href="getData.html" target=_blank> Get data of survey </a></H2>
+                                    </div>
+                                </div>
+                              
                         </div>
                         <div class="tab-pane fade" id="v-pills-datatopics" role="tabpanel" aria-labelledby="v-pills-datatopics-tab">
+                                <ul class="nav nav-tabs" id="codes" role="tablist">
+                                        <li class="nav-item">
+                                          <a class="nav-link active" id="home2-tab" data-toggle="tab" href="#home2" role="tab" aria-controls="home2" aria-selected="true">HTML</a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link" id="javascript2-tab" data-toggle="tab" href="#javascript2" role="tab" aria-controls="javascript2" aria-selected="false">JAVASCRIPT</a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link" id="demo2-tab" data-toggle="tab" href="#demo2" role="tab" aria-controls="demo2" aria-selected="false">DEMO</a>
+                                        </li>
+                                </ul>
+                                <div class="tab-content" id="myTabContent">
+                                    <div class="tab-pane fade show active" id="html2" role="tabpanel" aria-labelledby="html2-tab">
+<figure class="highlight">     
+<pre class="prettyprint linenums lang-java">  
+<code class="language-html" data-lang="html">
 
-                                <H2> <a href="getDataTopics.html" target=_blank> Get data of survey with pages (topics) </a></H2>
+&lt;div class="row" class="" id='bbsurvey'&gt; <br/>
+    &lt;div class="col-md-3 justify-content-center" id='left-bbsurvey'&gt; <br/>
+        &lt;div class="list-group" id='fields-bbsurvey'&gt; &lt;div&gt; <br/>
+    &lt;div&gt; <br/>
+    &lt;div class="col-md-9 border-left border-left-secondary " id='body-bbsurvey'&gt; &lt;div&gt; <br/>
+&lt;div&gt; <br/>
+
+&lt;button type="button" class="btn" id='getdata'&gt; Get data &lt;button&gt;<br/>
+&lt;div  class="dataContainer col-12 border border-secondary" id='dataContainer'&gt;<br/>
+
+&lt;div&gt;<br/>
+
+&lt;script type="text/JavaScript"   src="./script/getDataTopics.js" async&gt; &lt;script&gt; <br/>
+</code>
+
+</pre> 
+</figure>    
+                                    </div>
+                                    <div class="tab-pane fade" id="javascript2" role="tabpanel" aria-labelledby="javascript2-tab">
+                                            <pre class="prettyprint linenums lang-java">
+                                                    <code class="language-js" data-lang="js">
+    jQuery('#BBsurvey').survey({
+        title : 'questionnare' ,
+        hasTopics : true,
+        attributes :[{
+                label : 'Require',
+                name : 'require',
+                value: true , 
+                type:'Boolean' 
+            },{
+                label : 'Discription',
+                name : 'discription',
+                value: '' , 
+                type: 'Text'
+            },{
+                label : 'Related To',
+                name : 'related',
+                type:{
+                name :'related',
+                optionType : 'Select'
+                }
+            }
+        ],
+
+        fields :[{
+            label : 'Text Field' ,
+            name : 'text',
+            type: 'Text' , 
+        attributes :[{
+            label : 'Uppercase Answer',
+            name : 'uppercase',
+            value : false , 
+            type: 'Boolean'
+            }
+
+            ]
+        }
+        ,{
+            label : 'Date Field' ,
+            name : 'date',
+            type: 'Date' , 
+            id : 'datedebut'
+        },{
+            label : 'Boolean Field' ,
+            name : 'boolean',
+            type: 'Boolean' , 
+            id: 'boolean' 
+        },{
+            label : 'Number Field' ,
+            name : 'number',
+            type: 'Number' , 
+            id: 'number' ,
+            attributes :[
+                {
+                label : 'Maximum', 
+                name : 'maximum',
+                type: 'Number' , 
+                },
+                {
+                label : 'Minimum', 
+                name : 'minimum',
+                type: 'Number' , 
+                }
+            ]
+        },{
+            label : 'File Field' ,
+            name : 'photo',
+            type: 'File' , 
+            id: 'photo' ,
+            attributes :[{
+            label : 'Format Require',
+            name : 'format',
+            type:'Select' , 
+            option:['pdf' ,'csv' , 'jpeg' , 'png' ]
+            }
+        ]
+        },{
+            label : 'Multi Response Field' ,
+            name : 'multi',
+            type: 'Multi' , 
+            id: 'multi'
+    
+        },{
+            label : 'Select Field' ,
+            name : 'select',
+            type: 'Select' , 
+            attributes :[{
+            label : 'Answer order by',
+            name : 'orderby',
+            type:'Select' , 
+            option:['' , 'desc' , 'asc' ]
+            }
+        ]
+        }
+        
+        ]
+        });
+        var data =   bbservey.getData() ;
+        $('#getdata').click(function() {
+            document.getElementById("dataContainer").innerHTML = JSON.stringify(data,  null, "\t");
+        });        
+                                                      </code>
+                                                </pre> 
+                                    </div>
+                                    <div class="tab-pane fade" id="demo2" role="tabpanel" aria-labelledby="demo2-tab">
+                                            <H2> <a href="getDataTopics.html" target=_blank> Get data of survey with pages (topics) </a></H2>
+                                    </div>
+                                </div>
+                                
                         </div>
                         <div class="tab-pane fade" id="v-pills-params" role="tabpanel" aria-labelledby="v-pills-params-tab">
-                                <H2> <a href="paramsFields.html" target=_blank> change colors and icons of fields  </a></H2>
+                                          
+                                <ul class="nav nav-tabs" id="codes" role="tablist">
+                                        <li class="nav-item">
+                                          <a class="nav-link active" id="html3-tab" data-toggle="tab" href="#html3" role="tab" aria-controls="html3" aria-selected="true">HTML</a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link" id="javascript3-tab" data-toggle="tab" href="#javascript3" role="tab" aria-controls="javascript3" aria-selected="false">JAVASCRIPT</a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link" id="contact3-tab" data-toggle="tab" href="#demo3" role="tab" aria-controls="demo3" aria-selected="false">DEMO</a>
+                                        </li>
+                                </ul>
+                                <div class="tab-content" id="myTabContent">
+                                    <div class="tab-pane fade show active" id="html3" role="tabpanel" aria-labelledby="html3-tab">
+<figure class="highlight">     
+<pre class="prettyprint linenums lang-java">  
+<code class="language-html" data-lang="html">
+
+&lt;div class="row" class="" id='bbsurvey'&gt; <br/>
+    &lt;div class="col-md-3 justify-content-center" id='left-bbsurvey'&gt; <br/>
+        &lt;div class="list-group" id='fields-bbsurvey'&gt; &lt;div&gt; <br/>
+    &lt;div&gt; <br/>
+    &lt;div class="col-md-9 border-left border-left-secondary " id='body-bbsurvey'&gt; &lt;div&gt; <br/>
+&lt;div&gt; <br/>
+
+&lt;script type="text/JavaScript"   src="./script/paramsFields.js" async&gt; &lt;script&gt; <br/>
+
+</code>
+
+</pre> 
+</figure>    
+                                    </div>
+                                    <div class="tab-pane fade" id="javascript3" role="tabpanel" aria-labelledby="javascript3-tab">
+                                            <pre class="prettyprint linenums lang-java">
+                                                    <code class="language-js" data-lang="js">
+jQuery('#BBsurvey').survey({
+    title : 'questionnare' ,
+    hasTopics : false,
+    attributes :[{
+            label : 'Require',
+            name : 'require',
+            value: true , 
+            type:'Boolean' 
+        },{
+            label : 'Discription',
+            name : 'discription',
+            value: '' , 
+            type: 'Text'
+        },{
+            label : 'Related To',
+            name : 'related',
+            type:{
+            name :'related',
+            optionType : 'Select'
+            }
+        }
+    ],
+
+    fields :[{
+        label : 'Text Field' ,
+        name : 'text',
+        type: 'Text' , 
+        color : 'badge-secondary', /** https://getbootstrap.com/docs/4.2/components/badge/#contextual-variations */
+        icon : 'fas fa-font', /** https://fontawesome.com/icons/font?style=solid */
+    attributes :[{
+        label : 'Uppercase Answer',
+        name : 'uppercase',
+        value : false , 
+        type: 'Boolean'
+        }
+
+        ]
+    }
+    ,{
+        label : 'Date Field' ,
+        name : 'date',
+        type: 'Date' , 
+        id : 'datedebut',
+        color : 'badge-danger', /** https://getbootstrap.com/docs/4.2/components/badge/#contextual-variations */
+        icon : 'far fa-clock', /** https://fontawesome.com/icons/clock?style=regular */
+    },{
+        label : 'Boolean Field' ,
+        name : 'boolean',
+        type: 'Boolean' , 
+        id: 'boolean' ,
+        color : 'badge-success', /** https://getbootstrap.com/docs/4.2/components/badge/#contextual-variations */
+        icon : 'far fa-check-circle', /** https://fontawesome.com/icons/check-circle?style=regular  */
+    },{
+        label : 'Number Field' ,
+        name : 'number',
+        type: 'Number' , 
+        id: 'number' ,
+        color : 'badge-warning', /** https://getbootstrap.com/docs/4.2/components/badge/#contextual-variations */
+        icon : 'fas fa-sort-numeric-up', /** https://fontawesome.com/icons/sort-numeric-up?style=solid **/
+        attributes :[
+            {
+            label : 'Maximum', 
+            name : 'maximum',
+            type: 'Number' , 
+            },
+            {
+            label : 'Minimum', 
+            name : 'minimum',
+            type: 'Number' , 
+            }
+        ]
+    },{
+        label : 'File Field' ,
+        name : 'photo',
+        type: 'File' , 
+        id: 'photo' ,
+        color : 'badge-info', /** https://getbootstrap.com/docs/4.2/components/badge/#contextual-variations */
+        icon : 'fas fa-file-upload', /**https://fontawesome.com/icons/file-upload?style=solid */
+        attributes :[{
+        label : 'Format Require',
+        name : 'format',
+        type:'Select' , 
+        option:['pdf' ,'csv' , 'jpeg' , 'png' ]
+        }
+    ]
+    },{
+        label : 'Multi Response Field' ,
+        name : 'multi',
+        type: 'Multi' , 
+        id: 'multi',
+        color : 'badge-light', /** https://getbootstrap.com/docs/4.2/components/badge/#contextual-variations */
+        icon : 'fas fa-list-ol' /** https://fontawesome.com/icons/list-ol?style=solid */
+
+    },{
+        label : 'Select Field' ,
+        name : 'select',
+        type: 'Select' , 
+        color : 'badge-dark', /** https://getbootstrap.com/docs/4.2/components/badge/#contextual-variations */
+        icon : 'fas fa-ellipsis-v',/** https://fontawesome.com/icons/ellipsis-v?style=solid */
+        attributes :[{
+        label : 'Answer order by',
+        name : 'orderby',
+        type:'Select' , 
+        option:['' , 'desc' , 'asc' ]
+        }
+    ]
+    }
+    
+    ]
+});
+                                                      </code>
+                                                </pre> 
+                                    </div>
+                                    <div class="tab-pane fade" id="demo3" role="tabpanel" aria-labelledby="demo3-tab">
+                                            <H2> <a href="paramsFields.html" target=_blank> Change colors and icons of fields  </a></H2>
+                                    </div>
+                                </div>
+                              
                         </div>
                         <div class="tab-pane fade" id="v-pills-displaysimplelocal" role="tabpanel" aria-labelledby="v-pills-displaysimplelocal-tab">
-                                <H2> <a href="withDataWithoutTopicsLocal.html" target=_blank>  Display data of survey without topics local ressource </a></H2>
+                                <ul class="nav nav-tabs" id="codes" role="tablist">
+                                        <li class="nav-item">
+                                          <a class="nav-link active" id="html4-tab" data-toggle="tab" href="#html4" role="tab" aria-controls="html4" aria-selected="true">HTML</a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link" id="javascript4-tab" data-toggle="tab" href="#javascript4" role="tab" aria-controls="javascript4" aria-selected="false">JAVASCRIPT</a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link" id="demo4-tab" data-toggle="tab" href="#demo4" role="tab" aria-controls="demo4" aria-selected="false">DEMO</a>
+                                        </li>
+                                </ul>
+                                <div class="tab-content" id="myTabContent">
+<div class="tab-pane fade show active" id="html4" role="tabpanel" aria-labelledby="html4-tab">
+<figure class="highlight">     
+<pre class="prettyprint linenums lang-java">  
+<code class="language-html" data-lang="html">
+
+&lt;div class="row" class="" id='bbsurvey'&gt; <br/>
+    &lt;div class="col-md-3 justify-content-center" id='left-bbsurvey'&gt; <br/>
+        &lt;div class="list-group" id='fields-bbsurvey'&gt; &lt;div&gt; <br/>
+    &lt;div&gt; <br/>
+    &lt;div class="col-md-9 border-left border-left-secondary " id='body-bbsurvey'&gt; &lt;div&gt; <br/>
+&lt;div&gt; <br/>
+
+&lt;script type="text/JavaScript"   src="./script/withDataWithoutTopicsLocal.js" async&gt; &lt;script&gt; <br/>
+
+</code>
+
+</pre> 
+</figure>    
+</div>
+    <div class="tab-pane fade" id="javascript4" role="tabpanel" aria-labelledby="javascript4-tab">
+            <pre class="prettyprint linenums lang-java">
+                    <code class="language-js" data-lang="js">
+var data ={ "name": "Creations and sewing", "questions": [ { "value": "What is your socio-professional category?", "type": "Select", "options": [ "Farmer", "Artisan", "trader", "Entrepreneur", "Liberal profession", "Senior executive or intellectual profession", "Intermediate occupation", "Employee", "Worker", "Retirement", "Jobseeker", "Man or Housewife", "Student, high school student", "Other" ], "attributes": [ { "name": "require", "value": true }, { "name": "discription", "value": "" }, { "name": "related", "value": null }, { "name": "orderby", "value": "" } ] }, { "value": "name of your socio-professional category?", "type": "Text", "options": [], "attributes": [ { "name": "require", "value": true }, { "name": "discription", "value": "" }, { "name": "related", "questionRelated": "What is your socio-professional category?", "value": "Other" }, { "name": "uppercase", "value": false } ] }, { "value": "Did you buy designer clothes ?", "type": "Boolean", "options": [], "attributes": [ { "name": "require", "value": true }, { "name": "discription", "value": "" }, { "name": "related", "value": "" }] }, { "value": "Did you use the services of a seamstress for alterations ?", "type": "Boolean", "options": [], "attributes": [ { "name": "require", "value": true }, { "name": "discription", "value": "" }, { "name": "related", "value": "" } ] }, { "value": "What would be the maximum price that you would be willing to pay for 1 simple dressmaking retouch?", "type": "Number", "options": [], "attributes": [ { "name": "require", "value": true }, { "name": "discription", "value": "" }, { "name": "related", "value": "" }, { "name": "maximum", "value": "" }, { "name": "minimum", "value": "1" } ] }, { "value": "By what type (s) of sewing services would you be interested?", "type": "Multi", "options": [ "Various retouches", "Clothing creations", "Sportswear creations", "Creations for home and garden", "Animal creations" ], "attributes": [ { "name": "require", "value": true }, { "name": "discription", "value": "" }, { "name": "related", "value": "" } ] }, { "value": "upload a photo of your favorite product", "type": "File", "options": [], "attributes": [ { "name": "require", "value": false }, { "name": "discription", "value": "" }, { "name": "related", "value": "" }, { "name": "format", "value": "jpeg" } ] } ] };
+jQuery('#BBsurvey').survey({
+title : 'questionnare' ,
+hasTopics : false,
+data: {
+type: "local" ,
+source: data
+},
+attributes :[{
+label : 'Require',
+name : 'require',
+value: true , 
+type:'Boolean' 
+},{
+label : 'Discription',
+name : 'discription',
+value: '' , 
+type: 'Text'
+},{
+label : 'Related To',
+name : 'related',
+type:{
+name :'related',
+optionType : 'Select'
+}
+}
+],
+
+fields :[{
+label : 'Text Field' ,
+name : 'text',
+type: 'Text' , 
+// color : 'badge-danger',
+attributes :[{
+label : 'Uppercase Answer',
+name : 'uppercase',
+value : false , 
+type: 'Boolean'
+}
+
+]
+}
+,{
+label : 'Date Field' ,
+name : 'date',
+type: 'Date' , 
+id : 'datedebut'
+},{
+label : 'Boolean Field' ,
+name : 'boolean',
+type: 'Boolean' , 
+id: 'boolean' 
+},{
+label : 'Number Field' ,
+name : 'number',
+type: 'Number' , 
+id: 'number' ,
+attributes :[
+{
+label : 'Maximum', 
+name : 'maximum',
+type: 'Number' , 
+},
+{
+label : 'Minimum', 
+name : 'minimum',
+type: 'Number' , 
+}
+]
+},{
+label : 'File Field' ,
+name : 'photo',
+type: 'File' , 
+id: 'photo' ,
+attributes :[{
+label : 'Format Require',
+name : 'format',
+type:'Select' , 
+option:['pdf' ,'csv' , 'jpeg' , 'png' ]
+}
+]
+},{
+label : 'Multi Response Field' ,
+name : 'multi',
+type: 'Multi' , 
+id: 'multi'
+
+},{
+label : 'Select Field' ,
+name : 'select',
+type: 'Select' , 
+attributes :[{
+label : 'Answer order by',
+name : 'orderby',
+type:'Select' , 
+option:['' , 'desc' , 'asc' ]
+}
+]
+}
+
+]
+});
+
+
+$('#getdata').click(function() {
+document.getElementById("dataContainer").innerHTML = JSON.stringify(bbservey.getData(),  null, "\t");
+});
+
+                            
+                        </code>
+                </pre> 
+    </div>
+    <div class="tab-pane fade" id="demo4" role="tabpanel" aria-labelledby="demo4-tab">
+            <H2> <a href="withDataWithoutTopicsLocal.html" target=_blank>  Display data of survey without topics local ressource </a></H2>
+    </div>
                         </div>
+                           
+                    </div>
                         <div class="tab-pane fade" id="v-pills-displaysimpleremote" role="tabpanel" aria-labelledby="v-pills-displaysimpleremote-tab">
-                                <H2> <a href="withDataWithoutTopicsRemote.html" target=_blank>  Display data of survey without topics remote ressource </a></H2>
+                                <ul class="nav nav-tabs" id="codes" role="tablist">
+                                        <li class="nav-item">
+                                          <a class="nav-link active" id="html5-tab" data-toggle="tab" href="#html5" role="tab" aria-controls="html5" aria-selected="true">HTML</a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link" id="javascript5-tab" data-toggle="tab" href="#javascript5" role="tab" aria-controls="javascript5" aria-selected="false">JAVASCRIPT</a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link" id="demo5-tab" data-toggle="tab" href="#demo5" role="tab" aria-controls="demo5" aria-selected="false">DEMO</a>
+                                        </li>
+                                </ul>
+                                <div class="tab-content" id="myTabContent">
+                                    <div class="tab-pane fade show active" id="html5" role="tabpanel" aria-labelledby="html5-tab">
+                                        <figure class="highlight">     
+                                        <pre class="prettyprint linenums lang-java">  
+                                        <code class="language-html" data-lang="html">
+                                        
+                                        &lt;div class="row" class="" id='bbsurvey'&gt; <br/>
+                                            &lt;div class="col-md-3 justify-content-center" id='left-bbsurvey'&gt; <br/>
+                                                &lt;div class="list-group" id='fields-bbsurvey'&gt; &lt;div&gt; <br/>
+                                            &lt;div&gt; <br/>
+                                            &lt;div class="col-md-9 border-left border-left-secondary " id='body-bbsurvey'&gt; &lt;div&gt; <br/>
+                                        &lt;div&gt; <br/>
+                                        
+                                        &lt;script type="text/JavaScript"   src="./script/withDataWithoutTopicsRemote.js" async&gt; &lt;script&gt; <br/>
+                                        
+                                        </code>
+                                        
+                                        </pre> 
+                                        </figure>    
+                                            </div>
+                                            <div class="tab-pane fade" id="javascript5" role="tabpanel" aria-labelledby="javascript5-tab">
+                                                    <pre class="prettyprint linenums lang-java">
+                                                            <code class="language-js" data-lang="js">
+jQuery('#BBsurvey').survey({
+    title : 'questionnare' ,
+    hasTopics : false,
+    data: {
+      type: "remote" ,
+      source: {
+        url: "http://houdamallem.ml/api/dataQ.php" ,
+        dataType : 'json'
+      }
+    },
+    attributes :[{
+    label : 'Require',
+    name : 'require',
+    value: true , 
+    type:'Boolean' 
+    },{
+    label : 'Discription',
+    name : 'discription',
+    value: '' , 
+    type: 'Text'
+    },{
+    label : 'Related To',
+    name : 'related',
+    type:{
+    name :'related',
+    optionType : 'Select'
+    }
+    }
+    ],
+    
+    fields :[{
+    label : 'Text Field' ,
+    name : 'text',
+    type: 'Text' , 
+    // color : 'badge-danger',
+    attributes :[{
+    label : 'Uppercase Answer',
+    name : 'uppercase',
+    value : false , 
+    type: 'Boolean'
+    }
+    
+    ]
+    }
+    ,{
+    label : 'Date Field' ,
+    name : 'date',
+    type: 'Date' , 
+    id : 'datedebut'
+    },{
+    label : 'Boolean Field' ,
+    name : 'boolean',
+    type: 'Boolean' , 
+    id: 'boolean' 
+    },{
+    label : 'Number Field' ,
+    name : 'number',
+    type: 'Number' , 
+    id: 'number' ,
+    attributes :[
+    {
+    label : 'Maximum', 
+    name : 'maximum',
+    type: 'Number' , 
+    },
+    {
+    label : 'Minimum', 
+    name : 'minimum',
+    type: 'Number' , 
+    }
+    ]
+    },{
+    label : 'File Field' ,
+    name : 'photo',
+    type: 'File' , 
+    id: 'photo' ,
+    attributes :[{
+    label : 'Format Require',
+    name : 'format',
+    type:'Select' , 
+    option:['pdf' ,'csv' , 'jpeg' , 'png' ]
+    }
+    ]
+    },{
+    label : 'Multi Response Field' ,
+    name : 'multi',
+    type: 'Multi' , 
+    id: 'multi'
+    
+    },{
+    label : 'Select Field' ,
+    name : 'select',
+    type: 'Select' , 
+    attributes :[{
+    label : 'Answer order by',
+    name : 'orderby',
+    type:'Select' , 
+    option:['' , 'desc' , 'asc' ]
+    }
+    ]
+    }
+    
+    ]
+    });
+                                        
+                                        
+                                
+                                        
+                                                                    
+                                                                </code>
+                                                        </pre> 
+                                            </div>
+                                            <div class="tab-pane fade" id="demo5" role="tabpanel" aria-labelledby="demo5-tab">
+                                                    <H2> <a href="withDataWithoutTopicsRemote.html" target=_blank>  Display data of survey without topics remote ressource </a></H2>
+                                                </div>   
+                           </div>
                         </div>
                         <div class="tab-pane fade" id="v-pills-displaytopicslocal" role="tabpanel" aria-labelledby="v-pills-displaytopicslocal-tab">
-                                <H2> <a href="withDataWithTopicsLocal.html" target=_blank>  Display data of survey with topics local ressource </a></H2>
+                                <ul class="nav nav-tabs" id="codes" role="tablist">
+                                        <li class="nav-item">
+                                          <a class="nav-link active" id="html6-tab" data-toggle="tab" href="#html6" role="tab" aria-controls="html6" aria-selected="true">HTML</a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link" id="javascript6-tab" data-toggle="tab" href="#javascript6" role="tab" aria-controls="javascript6" aria-selected="false">JAVASCRIPT</a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link" id="demo6-tab" data-toggle="tab" href="#demo6" role="tab" aria-controls="demo6" aria-selected="false">DEMO</a>
+                                        </li>
+                                </ul>
+                                <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="html6" role="tabpanel" aria-labelledby="html6-tab">
+                                        <figure class="highlight">     
+                                        <pre class="prettyprint linenums lang-java">  
+                                        <code class="language-html" data-lang="html">
+                                        
+                                        &lt;div class="row" class="" id='bbsurvey'&gt; <br/>
+                                            &lt;div class="col-md-3 justify-content-center" id='left-bbsurvey'&gt; <br/>
+                                                &lt;div class="list-group" id='fields-bbsurvey'&gt; &lt;div&gt; <br/>
+                                            &lt;div&gt; <br/>
+                                            &lt;div class="col-md-9 border-left border-left-secondary " id='body-bbsurvey'&gt; &lt;div&gt; <br/>
+                                        &lt;div&gt; <br/>
+                                        
+                                        &lt;script type="text/JavaScript"   src="./script/withDataWithTopicsLocal.js" async&gt; &lt;script&gt; <br/>
+                                        
+                                        </code>
+                                        
+                                        </pre> 
+                                        </figure>    
+                                            </div>
+                                            <div class="tab-pane fade" id="javascript6" role="tabpanel" aria-labelledby="javascript6-tab">
+                                                    <pre class="prettyprint linenums lang-java">
+                                                            <code class="language-js" data-lang="js">
+                                        var data ={ "name": "Creations and sewing", "questions": [ { "value": "What is your socio-professional category?", "type": "Select", "options": [ "Farmer", "Artisan", "trader", "Entrepreneur", "Liberal profession", "Senior executive or intellectual profession", "Intermediate occupation", "Employee", "Worker", "Retirement", "Jobseeker", "Man or Housewife", "Student, high school student", "Other" ], "attributes": [ { "name": "require", "value": true }, { "name": "discription", "value": "" }, { "name": "related", "value": null }, { "name": "orderby", "value": "" } ] }, { "value": "name of your socio-professional category?", "type": "Text", "options": [], "attributes": [ { "name": "require", "value": true }, { "name": "discription", "value": "" }, { "name": "related", "questionRelated": "What is your socio-professional category?", "value": "Other" }, { "name": "uppercase", "value": false } ] }, { "value": "Did you buy designer clothes ?", "type": "Boolean", "options": [], "attributes": [ { "name": "require", "value": true }, { "name": "discription", "value": "" }, { "name": "related", "value": "" }] }, { "value": "Did you use the services of a seamstress for alterations ?", "type": "Boolean", "options": [], "attributes": [ { "name": "require", "value": true }, { "name": "discription", "value": "" }, { "name": "related", "value": "" } ] }, { "value": "What would be the maximum price that you would be willing to pay for 1 simple dressmaking retouch?", "type": "Number", "options": [], "attributes": [ { "name": "require", "value": true }, { "name": "discription", "value": "" }, { "name": "related", "value": "" }, { "name": "maximum", "value": "" }, { "name": "minimum", "value": "1" } ] }, { "value": "By what type (s) of sewing services would you be interested?", "type": "Multi", "options": [ "Various retouches", "Clothing creations", "Sportswear creations", "Creations for home and garden", "Animal creations" ], "attributes": [ { "name": "require", "value": true }, { "name": "discription", "value": "" }, { "name": "related", "value": "" } ] }, { "value": "upload a photo of your favorite product", "type": "File", "options": [], "attributes": [ { "name": "require", "value": false }, { "name": "discription", "value": "" }, { "name": "related", "value": "" }, { "name": "format", "value": "jpeg" } ] } ] };
+                                        jQuery('#BBsurvey').survey({
+                                        title : 'questionnare' ,
+                                        hasTopics : true,
+                                        data: {
+                                        type: "local" ,
+                                        source: data
+                                        },
+                                        attributes :[{
+                                        label : 'Require',
+                                        name : 'require',
+                                        value: true , 
+                                        type:'Boolean' 
+                                        },{
+                                        label : 'Discription',
+                                        name : 'discription',
+                                        value: '' , 
+                                        type: 'Text'
+                                        },{
+                                        label : 'Related To',
+                                        name : 'related',
+                                        type:{
+                                        name :'related',
+                                        optionType : 'Select'
+                                        }
+                                        }
+                                        ],
+                                        
+                                        fields :[{
+                                        label : 'Text Field' ,
+                                        name : 'text',
+                                        type: 'Text' , 
+                                        // color : 'badge-danger',
+                                        attributes :[{
+                                        label : 'Uppercase Answer',
+                                        name : 'uppercase',
+                                        value : false , 
+                                        type: 'Boolean'
+                                        }
+                                        
+                                        ]
+                                        }
+                                        ,{
+                                        label : 'Date Field' ,
+                                        name : 'date',
+                                        type: 'Date' , 
+                                        id : 'datedebut'
+                                        },{
+                                        label : 'Boolean Field' ,
+                                        name : 'boolean',
+                                        type: 'Boolean' , 
+                                        id: 'boolean' 
+                                        },{
+                                        label : 'Number Field' ,
+                                        name : 'number',
+                                        type: 'Number' , 
+                                        id: 'number' ,
+                                        attributes :[
+                                        {
+                                        label : 'Maximum', 
+                                        name : 'maximum',
+                                        type: 'Number' , 
+                                        },
+                                        {
+                                        label : 'Minimum', 
+                                        name : 'minimum',
+                                        type: 'Number' , 
+                                        }
+                                        ]
+                                        },{
+                                        label : 'File Field' ,
+                                        name : 'photo',
+                                        type: 'File' , 
+                                        id: 'photo' ,
+                                        attributes :[{
+                                        label : 'Format Require',
+                                        name : 'format',
+                                        type:'Select' , 
+                                        option:['pdf' ,'csv' , 'jpeg' , 'png' ]
+                                        }
+                                        ]
+                                        },{
+                                        label : 'Multi Response Field' ,
+                                        name : 'multi',
+                                        type: 'Multi' , 
+                                        id: 'multi'
+                                        
+                                        },{
+                                        label : 'Select Field' ,
+                                        name : 'select',
+                                        type: 'Select' , 
+                                        attributes :[{
+                                        label : 'Answer order by',
+                                        name : 'orderby',
+                                        type:'Select' , 
+                                        option:['' , 'desc' , 'asc' ]
+                                        }
+                                        ]
+                                        }
+                                        
+                                        ]
+                                        });
+                                        
+                                        
+                                  
+                                        
+                                                                    
+                                                                </code>
+                                                        </pre> 
+                                            </div>
+                                            <div class="tab-pane fade" id="demo6" role="tabpanel" aria-labelledby="demo6-tab">
+                                                    <H2> <a href="withDataWithTopicsLocal.html" target=_blank>  Display data of survey with topics local ressource </a></H2>
+                                            </div> 
+                                            </div>
+                       
                         </div>
                         <div class="tab-pane fade" id="v-pills-displaytopicsremote" role="tabpanel" aria-labelledby="v-pills-displaytopicsremote-tab">
-
-                            <H2> <a href="withDataWithTopicsRemote.html" target=_blank>  Display data of survey with topics remote ressource </a></H2>
+                                <ul class="nav nav-tabs" id="codes" role="tablist">
+                                        <li class="nav-item">
+                                          <a class="nav-link active" id="html7-tab" data-toggle="tab" href="#html7" role="tab" aria-controls="html7" aria-selected="true">HTML</a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link" id="javascript7-tab" data-toggle="tab" href="#javascript7" role="tab" aria-controls="javascript7" aria-selected="false">JAVASCRIPT</a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link" id="demo7-tab" data-toggle="tab" href="#demo7" role="tab" aria-controls="demo7" aria-selected="false">DEMO</a>
+                                        </li>
+                                </ul>
+                                <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="html7" role="tabpanel" aria-labelledby="html7-tab">
+                                        <figure class="highlight">     
+                                        <pre class="prettyprint linenums lang-java">  
+                                        <code class="language-html" data-lang="html">
+                                        
+                                        &lt;div class="row" class="" id='bbsurvey'&gt; <br/>
+                                            &lt;div class="col-md-3 justify-content-center" id='left-bbsurvey'&gt; <br/>
+                                                &lt;div class="list-group" id='fields-bbsurvey'&gt; &lt;div&gt; <br/>
+                                            &lt;div&gt; <br/>
+                                            &lt;div class="col-md-9 border-left border-left-secondary " id='body-bbsurvey'&gt; &lt;div&gt; <br/>
+                                        &lt;div&gt; <br/>
+                                        
+                                        &lt;script type="text/JavaScript"   src="./script/withDataWithTopicsRemote.js" async&gt; &lt;script&gt; <br/>
+                                        
+                                        </code>
+                                        
+                                        </pre> 
+                                        </figure>    
+                                            </div>
+                                            <div class="tab-pane fade" id="javascript7" role="tabpanel" aria-labelledby="javascript7-tab">
+                                                    <pre class="prettyprint linenums lang-java">
+                                                            <code class="language-js" data-lang="js">
+                                 jQuery('#BBsurvey').survey({
+                                        title : 'questionnare' ,
+                                        hasTopics : true,
+                                        data: {
+                                          type: "remote" ,
+                                          source: {
+                                            url: "http://houdamallem.ml/api/data.php" ,
+                                            dataType : 'json'
+                                          }
+                                        },
+                                        attributes :[{
+                                        label : 'Require',
+                                        name : 'require',
+                                        value: true , 
+                                        type:'Boolean' 
+                                        },{
+                                        label : 'Discription',
+                                        name : 'discription',
+                                        value: '' , 
+                                        type: 'Text'
+                                        },{
+                                        label : 'Related To',
+                                        name : 'related',
+                                        type:{
+                                        name :'related',
+                                        optionType : 'Select'
+                                        }
+                                        }
+                                        ],
+                                        
+                                        fields :[{
+                                        label : 'Text Field' ,
+                                        name : 'text',
+                                        type: 'Text' , 
+                                        // color : 'badge-danger',
+                                        attributes :[{
+                                        label : 'Uppercase Answer',
+                                        name : 'uppercase',
+                                        value : false , 
+                                        type: 'Boolean'
+                                        }
+                                        
+                                        ]
+                                        }
+                                        ,{
+                                        label : 'Date Field' ,
+                                        name : 'date',
+                                        type: 'Date' , 
+                                        id : 'datedebut'
+                                        },{
+                                        label : 'Boolean Field' ,
+                                        name : 'boolean',
+                                        type: 'Boolean' , 
+                                        id: 'boolean' 
+                                        },{
+                                        label : 'Number Field' ,
+                                        name : 'number',
+                                        type: 'Number' , 
+                                        id: 'number' ,
+                                        attributes :[
+                                        {
+                                        label : 'Maximum', 
+                                        name : 'maximum',
+                                        type: 'Number' , 
+                                        },
+                                        {
+                                        label : 'Minimum', 
+                                        name : 'minimum',
+                                        type: 'Number' , 
+                                        }
+                                        ]
+                                        },{
+                                        label : 'File Field' ,
+                                        name : 'photo',
+                                        type: 'File' , 
+                                        id: 'photo' ,
+                                        attributes :[{
+                                        label : 'Format Require',
+                                        name : 'format',
+                                        type:'Select' , 
+                                        option:['pdf' ,'csv' , 'jpeg' , 'png' ]
+                                        }
+                                        ]
+                                        },{
+                                        label : 'Multi Response Field' ,
+                                        name : 'multi',
+                                        type: 'Multi' , 
+                                        id: 'multi'
+                                        
+                                        },{
+                                        label : 'Select Field' ,
+                                        name : 'select',
+                                        type: 'Select' , 
+                                        attributes :[{
+                                        label : 'Answer order by',
+                                        name : 'orderby',
+                                        type:'Select' , 
+                                        option:['' , 'desc' , 'asc' ]
+                                        }
+                                        ]
+                                        }
+                                        
+                                        ]
+                                        });
+                                        
+                                        
+                        
+                                        
+                                                                    
+                                                                </code>
+                                                        </pre> 
+                                            </div>
+                                            <div class="tab-pane fade" id="demo7" role="tabpanel" aria-labelledby="demo7-tab">
+                                                    <H2> <a href="withDataWithTopicsRemote.html" target=_blank>  Display data of survey with topics remote ressource </a></H2>     
+                                                 </div>
+                 </div>
                         </div>
                       </div>
                     </div>

@@ -6,7 +6,7 @@ var BBsurveywithDataWithTopicsRemoteDemo = function() {
                         data: {
                           type: "remote" ,
                           source: {
-                            url: "https://jazairfone.com/api/data.php" ,
+                            url: "http://houdamallem.ml/api/data.php" ,
                             dataType : 'json'
                           }
                         },
