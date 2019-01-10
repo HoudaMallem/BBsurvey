@@ -1,4 +1,4 @@
-define( function () {
+define( ['jquery'] , function ($) {
     var topic = function(){
         this.composites = [];
 
@@ -40,25 +40,18 @@ define( function () {
         return  this.composites.filter(composite => composite.key == key);
     };
     topic.prototype.showHtml = function (topic) {
-         var html = `
-         <div  class="border border card text-left mb-3 oneTopic" data-key='${this.key}' id='TP${this.key}'>
-            <div class="card-header headerTP" id='headerTP-${this.key}'>
-                <div class="row justify-content-between headerQ" >
-                    <div class="col-11" id='topicTitleHandler-${this.key}'>
-                        <a href="#" id="topicTitle-${this.key}"> ${this.name} </a>
-                    </div>
-                    <div class="col-1 text-right">   
-                    <div class="clearfix">
-                    <button type="button" class="btn btn-danger rounded-circle float-left" id="rmTP-${this.key}"><i class="far fa-trash-alt"></i></button>
-                        <button type="button" class="btn rounded-circle float-right" id="hiddenTP-${this.key}"><i class="fas fa-angle-down"></i></button>
-                
-                        </div>
-                    </div>
-                </div>
-            </div>
-         <div id='TPBD${this.key}' >
-         </div>
-         </div>`;
+       
+        var html = ' <div  class="border border card text-left mb-3 oneTopic" data-key="'+this.key+'" id="TP'+this.key+'">';
+        html += '<div class="card-header headerTP" id="headerTP-'+this.key+'" >';
+        html += '<div class="row justify-content-between headerQ" >';
+        html += '<div class="col-11" id="topicTitleHandler-'+this.key+'">';
+        html += '<a href="#" id="topicTitle-'+this.key+'"> '+this.name+'</a></div>';
+        html += '<div class="col-1 text-right">';
+        html += '<div class="clearfix">';
+        html +=  '<button type="button" class="btn btn-danger rounded-circle float-left" id="rmTP-'+this.key+'"><i class="far fa-trash-alt"></i></button>';
+        html += '<button type="button" class="btn rounded-circle float-right" id="hiddenTP-'+this.key+'"><i class="fas fa-angle-down"></i></button>';
+        html +='</div></div></div></div>';
+        html += '<div id="TPBD'+this.key+'" ></div></div>';
          $('#TP'+this.parent.key).append( html );
     };
     return topic ;

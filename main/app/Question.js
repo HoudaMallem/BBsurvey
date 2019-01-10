@@ -57,46 +57,25 @@ define(function () {
         this.attributObjc.push(objAttribut) ;
     }
     Question.prototype.showHtml = function () {
-      html=` 
-          <div  id='${this.key}' class='oneQuestion border mb-3 p-3' data-key='${this.key}'>
-            <div class="row justify-content-between headerQ" >
-              <div class="col-1">
-                <span class="badge  ${this.color}">${this.type}</span>
-              </div>
-              <div class="col-10">
-                ${this.field.showHtml(this)}
-              </div>
-              <div class="col-1">   
-                <button type="button" class="btn btn-danger rounded-circle btn-sm" id="rmQ-${this.key}"> <i class="far fa-trash-alt"></i></button>
-                <button type="button" class="btn btn-secces rounded-circle btn-sm" data-toggle="modal" data-target="#myModal-${this.key}" id="shwAttr-${this.key}"><i class="fas fa-cog"></i></button>        
-              </div>
-            </div> 
-          <div class="modal fade bd-example-modal-lg"  tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id='myModal-${this.key}'>
-          <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalCenterTitle">${this.type}</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-              <div class="container-fluid">
-              <div class="row form-group">
-              `
-              this.attributObjc.forEach(function (attr) {
-                html +=attr.getAttribute().showHtml(this.key);
-      
-              });   
-             `</div></div></div>
-            </div>
-          </div>
-         `;
 
-      html +=` </div>
-        </div>
-        </div>
-      `;
+      html="<div  id='"+this.key+"' class='oneQuestion border mb-3 p-3' data-key='"+this.key+"'>"
+      html +='<div class="row justify-content-between headerQ" ><div class="col-1"><span class="badge  '+this.color+'">'+this.type+'</span></div><div class="col-10">'
+      html += this.field.showHtml(this)
+      html += '</div><div class="col-1">' 
+      html +=  '<button type="button" class="btn btn-danger rounded-circle btn-sm" id="rmQ-'+this.key+'"> <i class="far fa-trash-alt"></i></button>'
+      html +=   '<button type="button" class="btn btn-secces rounded-circle btn-sm" data-toggle="modal" data-target="#myModal-'+this.key+'" id="shwAttr-'+this.key+'"><i class="fas fa-cog"></i></button> ';       
+      html +=  '</div> </div>' 
+      html += '<div class="modal fade bd-example-modal-lg"  tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="myModal-'+this.key+'">'
+        html +=    '<div class="modal-dialog modal-lg"> <div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="exampleModalCenterTitle">'+this.type+'</h5>'
+        html +='<button type="button" class="close" data-dismiss="modal" aria-label="Close">  <span aria-hidden="true">&times;</span></button></div><div class="modal-body"> <div class="container-fluid"> <div class="row form-group">'   
+            this.attributObjc.forEach(function (attr) {
+              html +=attr.getAttribute().showHtml(this.key);
+    
+            });   
+            html += "</div></div></div> </div></div>";
+
+      html +="</div></div></div>"
+    
       return html ;
     };
     return Question ;

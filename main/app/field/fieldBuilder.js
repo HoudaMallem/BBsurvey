@@ -75,8 +75,9 @@ define(['./Field' , '../attribute/attributeBuilder'], function (Field , attribut
             type:'SelectSpecial' 
           }
         this.setAttribut = function (attribut) {
-            attribut.unshift(newattr);
-            this.field.setAttribut(attribut);
+            var newAtt  = attribut;
+            newAtt.unshift(newattr);
+            this.field.setAttribut(newAtt);
             return this ; 
         };
     };
@@ -86,22 +87,31 @@ define(['./Field' , '../attribute/attributeBuilder'], function (Field , attribut
         this.field = new fieldnumber();
     };
     fieldBuilderNumber.prototype = new Builder() ;
+
     var fieldBuilderBoolean = function(){
+        
         var fieldboolean = Field.FieldBoolean ;
         this.field = new fieldboolean();
     };
     fieldBuilderBoolean.prototype = new Builder() ;
+
     var fieldBuilderDate = function(){
         var fielddate = Field.FieldDate ;
         this.field = new fielddate();
     };
     fieldBuilderDate.prototype = new Builder() ;
+    var fieldBuilderFile = function(){
+        var fieldfile = Field.FieldFile ;
+        this.field = new fieldfile();
+    };
+    fieldBuilderFile.prototype = new Builder() ;
     return {
         fieldBuilderSelect : fieldBuilderSelect,
         fieldBuilderText : fieldBuilderText,
         fieldBuilderMulti : fieldBuilderMulti,
         fieldBuilderNumber : fieldBuilderNumber,
         fieldBuilderBoolean : fieldBuilderBoolean,
-        fieldBuilderDate : fieldBuilderDate
+        fieldBuilderDate : fieldBuilderDate,
+        fieldBuilderFile : fieldBuilderFile
     };
 });

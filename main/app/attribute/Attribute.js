@@ -1,4 +1,4 @@
-define(function () {
+define(['jquery'] ,function ($) {
     var AttributeBase = {
         id : 'id',
         label : 'Question ' ,
@@ -65,17 +65,15 @@ define(function () {
 
             this.showHtml = function () {
                 var value = this.value;
-                let  html =` <div class="form-group col-md-6">  <label for="${this.id}">${this.label}</label>`;
-                      html +=`<select class="form-control" name='${this.name}' id='${this.getParent().key}-${this.id}' >`
+                var  html ='<div class="form-group mb-4 col-md-6">  <label for="'+this.id+'">'+this.label+'</label>';
+                      html +='<select class="form-control" name="'+this.name+'" id="'+this.getParent().key+'-'+this.id+'" >'
                     this.options.forEach(function (op) {
-                        html +=`<option name='${op}'  id="${op}" ${(op == value) ? 'selected': ''} >${op} </option>`;
+                        html +='<option name="'+op+'"  id="'+op+'" ';
+                        html += (op == value) ? 'selected': '' 
+                        html += '>'+op +'</option>';
 
-                        //if(op == value){
-                         //   html += 'selected' ;
-                       // }
-                     //   html += ` >${op} </option>` ;
                     });
-                    html += `</select></div>`;
+                    html += '</select></div>';
                 return html ;
             }
           
@@ -84,12 +82,9 @@ define(function () {
 
     var AttributText = function(){
         this.showHtml  = function () {
-         let  html =`
-         <div class="col-md-6 attributText">
-            <label for="${this.id}">${this.label}</label>
-             <input class="form-control" type="text" value="${this.value}" id='${this.getParent().key}-${this.id}'  >
-         </div>
-     `;
+         var  html ='<div class="form-group col-md-6 mb-4 attributText">'
+         html +='<label for="'+this.id+'">'+this.label+'</label>'
+         html += '<input class="form-control" type="text" value="'+this.value+'" id="'+this.getParent().key+'-'+this.id+'" > </div>' ; 
          return html ;
         };   
     };
@@ -98,12 +93,10 @@ define(function () {
 
     var AttributNumber = function(){
         this.showHtml  = function (key) {
-         let  html =`
-         <div class="col-md-6 attributNumber">
-            <label for="${this.id}">${this.label}</label>
-             <input class="form-control" type="number" value="${this.value}" id='${this.getParent().key}-${this.id}'  >
-         </div>
-     `;
+         var  html ='<div class="form-group col-md-6 mb-4 attributNumber">'
+
+         html += '<label for="'+this.id+'">'+this.label+'</label>'
+         html +=   '<input class="form-control" type="number" value="'+this.value+'" id="'+this.getParent().key+'-'+this.id+'" > </div>' ;
          return html ;
         };   
     };
@@ -113,13 +106,11 @@ define(function () {
 
     var AttributBoolean = function(){
         this.showHtml = function () {
-            let  html =`
-            <div class="form-group col-md-6 attributBoolean">
-                <label for="${this.id}">${this.label}</label>
-                <input class="form-control form-check-input" ${ (this.value) ? 'checked' : ''} type="checkbox" name="${this.name}" value='' id='${this.getParent().key}-${this.id}'  >
-
-            </div>
-            `;
+            var  html ='<div class="form-group mb-4 col-md-6 attributBoolean"> '
+            html += '<label for="'+this.id+'">'+this.label+'</label>'
+            html += '<input class="form-control form-check-input" ';
+            html +=  (this.value) ? 'checked' : '';
+            html +=  ' type="checkbox" name="'+this.name+'"  id="'+this.getParent().key+"-"+this.id+'"  ></div>';
            return html ;
         }
    
@@ -128,20 +119,20 @@ define(function () {
     var AttributRelated = function(){
         this.showHtml = function () {
             var value = this.value;
-        let     html =` <div class="col-md-6 attributRelated">  <label for="${this.id}">${this.label}</label>`;
-                html +=`<select class="form-control attributRelatedSelect" name='${this.name}' id='${this.getParent().key}-${this.id}' >`
+        var     html ='<div class="form-group col-md-6 mb-4 attributRelated">  <label for="'+this.id+'">'+this.label+'</label>';
+                html +='<select class="form-control attributRelatedSelect" name="'+this.name+'" id="'+this.getParent().key+'-'+this.id+'" >'
                 this.options.forEach(function (GroupOp) {
                     if(GroupOp != this.parent){
-                        html +=`<option> </option>`;
-                        html +=`   <optgroup class='GP${GroupOp.key}'  value="${$('.fieldname-'+GroupOp.key).val()}" label="${$('.fieldname-'+GroupOp.key).val()}">`;
+                        html +='<option> </option>';
+                        html +='<optgroup class="GP'+GroupOp.key+'"  value="'+$('.fieldname-'+GroupOp.key).val()+'" label="'+$('.fieldname-'+GroupOp.key).val()+'">';
                         var subOptions =  $('.fieldname-'+GroupOp.key).parents('#'+GroupOp.key).find('.modal').find('.specialSelectContainer').html();
                         subOptions = subOptions.replace('name="'+value+'"' , "name="+value+'" selected');
                         html += subOptions
-                        html +=`  </optgroup>`;
+                        html +='</optgroup>';
                     }
 
                 });
-                html += `</select></div>`;
+                html += '</select></div>';
             return html ;
         }
    
@@ -150,19 +141,20 @@ define(function () {
     var AttributSelectSpecial = function(){
 
         this.showHtml = function () {
-            let html =`<div class='form-group col-md-12 attributSelectSpecial'> 
-                         <div class="form-group col-md-12">  <label for="${this.id}">${this.label}</label>`;
-                    html +=` <input  type="text" class="form-control newOptionSpecialSelect" id='newOption${this.getParent().key}-${this.id}'  name='${this.name}' data-special='add' >`
-                html += `</div>
-                        <div class="form-group col-md-12"> 
-                            <select name="${this.name}m" class="form-control specialSelectContainer" id='${this.getParent().key}-${this.id}' multiple>`
+            var html ="<div class='form-group col-md-12 attributSelectSpecial'> ";
+            html += '<div class="form-group col-md-12">  <label for="'+this.id+'">'+this.label+'</label>';
+                    html +='<input  type="text" class="form-control newOptionSpecialSelect" id="newOption'+this.getParent().key+'-'+this.id+'"  name="'+this.name+'" data-special="add" >'
+            
+                    html += '</div> <div class="form-group col-md-12"> '
+                    
+                    html +=  '<select name="'+this.name+'m" class="form-control specialSelectContainer" id="'+this.getParent().key+'-'+this.id+'" multiple>'
                             this.options.forEach(function (op) {
-                                html +=`<option name='${op}' id="${op}">${op} </option>` ;
+                                html +="<option name='"+op+"' id='"+op+"'>"+op+'</option>' ;
                             });
-                            `</select>`;              
-                    html += `<input type='button' class="form-control specialSelectVoid" id='void${this.getParent().key}-${this.id}' value='-' data-special='delete'>
-                        </div>
-                    </div><hr/>`;
+                            html +='</select>';              
+                    html += '<input type="button" class="form-control specialSelectVoid" id="void'+this.getParent().key+'-'+this.id+'"  value="-" data-special="delete">'
+                      
+                    html +=   '</div></div><hr/>';
             return html ;
         }
       

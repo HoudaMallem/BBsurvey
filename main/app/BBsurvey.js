@@ -1,4 +1,4 @@
-define(function () {
+define(['jquery'] ,function ($) {
     //['jquery' ],
     var Bbsurvey = function(){
         this.composites = [];
@@ -84,11 +84,19 @@ define(function () {
     };
     Bbsurvey.prototype.formatSetting = function () {       
         if(this.setting.hasOwnProperty('attributes') && this.setting.attributes.length >0 ){
-            let attributeSetting = this.setting.attributes;            
+            var attributeSetting = this.setting.attributes;            
             this.setting.fields.forEach(function (set) {
+                
                 if(set.hasOwnProperty('attributes')  ){
-                    //&& set.attributes.length >0
-                  var newAttributeList =   attributeSetting.concat(set.attributes);
+                    if (typeof set.attributes == 'object') { 
+                        var newAttributeList =   attributeSetting.concat(set.attributes);
+                    }else{
+                        throw new Error('attributes of '+set.name+' field must be an array !!!! ' );
+                    }
+                }else{
+                   set.attributes = []
+                   var newAttributeList =   attributeSetting.concat(set.attributes);
+
                 }
                 set.attributes  = newAttributeList; 
             })
@@ -96,23 +104,16 @@ define(function () {
 
     };
     var leftBbsurveyShow = function(){
-        let  html =`<div  id='topicBox-bbsurvey'>
-        <div class='input-group mb-3'>
-            <input type='text' class='form-control' id='title' placeholder='Title of new Topic ' />
-
-        </div>`;
-        html +=`<select class="form-control" id="listOfTopics" multiple>
-        </select></div><hr>`;
+        var  html ="<div  id='topicBox-bbsurvey'><div class='input-group mb-3'> <input type='text' class='form-control' id='title' placeholder='Title of new Topic ' /> </div>";
+        html +='<select class="form-control" id="listOfTopics" multiple> </select></div><hr>';
         $(html ).insertBefore('#fields-bbsurvey');
 
         return html;
     }
     var BbsurveyWithData = function(){
         this.showHtml = function () {
-            var html2 = `<div  class="" id='TP${this.key}'>
-            <div id='TPBD${this.key}' >
-            </div>
-            </div>`;
+            var html2 = "<div  class='' id='TP"+this.key+"'>"
+            html2 += "<div id='TPBD"+this.key+"' ></div> </div>";
             $('#body-bbsurvey').append( html2 );
         }
 
@@ -121,8 +122,7 @@ define(function () {
     var BbsurveyWithDataAndTopics = function(){
         this.showHtml = function () {
             leftBbsurveyShow();
-            var html2 = `<div  class="" id='TP${this.key}'>
-            </div>`;
+            var html2 = "<div  class='' id='TP"+this.key+"'> </div>";
             $('#body-bbsurvey').append( html2 );
         }
     }
@@ -130,12 +130,9 @@ define(function () {
 
     var BbsurveyWithoutData = function(){
         this.showHtml = function () {
-         //   let  html =``;
-           //           $(html ).insertBefore('#fields-bbsurvey');
-                      var html2 = `<div  class="" id='TP${this.key}'>
-                      <div id='TPBD${this.key}' >
-                      </div>
-                      </div>`;
+                      var html2 = "<div  class='' id='TP"+this.key+"' >";
+                      html2 += "<div id='TPBD"+this.key+"' >";
+                      html2 += "</div> </div>";
                       $('#body-bbsurvey').append( html2 );
         }
 
@@ -145,8 +142,7 @@ define(function () {
     var BbsurveyWithoutDataWithTopics = function(){
         this.showHtml = function () {
             leftBbsurveyShow();
-            var html2 = `<div  class="" id='TP${this.key}'>
-            </div>`;
+            var html2 = '<div  class="" id="TP'+this.key+'" > </div>';
             $('#body-bbsurvey').append( html2 );
         }
 

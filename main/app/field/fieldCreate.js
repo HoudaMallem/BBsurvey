@@ -1,4 +1,4 @@
-define([ '../questionCreate' , '../attribute/attributeBuilder' ], function ( QuestionCreate , AttributeBuilder) {
+define([ '../questionCreate' , '../attribute/attributeBuilder' , 'jquery'  ], function ( QuestionCreate , AttributeBuilder , $) {
     var defaults ={
         id:"id",
         name : 'name',
@@ -13,19 +13,15 @@ define([ '../questionCreate' , '../attribute/attributeBuilder' ], function ( Que
         this.option = setting ;
         this.fieldBuilder = fieldBuilder;
         this.handleEvent = function(event) {
-          //  console.log(this); 
             var self = this ;
             
             if(self.fieldBuilder.getField().getParent().hasTopics == false){
                 var  parent =  self.fieldBuilder.getField().getParent();
                 $(document).trigger("questionCreate",[ self , parent]);   
             }else if(self.fieldBuilder.getField().getParent().hasTopics == true){
-              //  alert($('#listOfTopics').val())
-              const selectTopics= $('#left-bbsurvey #listOfTopics').val();
-            
+              var selectTopics= $('#left-bbsurvey #listOfTopics').val();
                 if( selectTopics != null && selectTopics !=""){
                     if (typeof selectTopics == 'object') {
-                  
                         selectTopics.forEach(function (oneTopic) {
                             var  bbsurveyMain =  self.fieldBuilder.getField().getParent();
                             var  parent = bbsurveyMain.getChildrenByKey(oneTopic )[0]
@@ -58,10 +54,7 @@ define([ '../questionCreate' , '../attribute/attributeBuilder' ], function ( Que
         this.fieldBuilder.setParent(parent);
     }
     FieldCreate.prototype.addEvent =function(eventtype ){
-       
-        var self = this ;
         document.getElementById(this.option.id).addEventListener(eventtype, this , false);
-
     };
     FieldCreate.prototype.getField =  function () {
         return this.fieldBuilder.getField();

@@ -1,4 +1,4 @@
-define([ './Question' , './attribute/attributeBuilder', './attribute/attributeCreate'], function ( Question , AttributeBuilder , AttributeCreate) {
+define([ './Question' , './attribute/attributeBuilder', './attribute/attributeCreate' , 'jquery'], function ( Question , AttributeBuilder , AttributeCreate , $) {
 document.i =1;
     var QuestionCreate = function(){}
     QuestionCreate.prototype.create = function (parent , fieldcurrent) {
@@ -10,20 +10,17 @@ document.i =1;
         this.question.setColor(fieldcurrent.getField().getColor());
         this.question.setAttribut(fieldcurrent.getField().getAttribut());
         this.question.setParent(parent);
-       // console.log('CREATE QUESTION ')
         document.i++;
         return this ; 
     };
     QuestionCreate.prototype.initAttribut = function(instanceQuestion){
       var Q =  this.question;
       var idAttr = 1
-    //  console.log(Q.getAttribut())
     var newListAttr = []
       Q.getAttribut().forEach(function (newAtrr) {
         var attr = {}
         attr = newAtrr ;
         attr.id = idAttr;
-     //   console.log(attr)
         if(instanceQuestion != undefined){
           var instantAttr = instanceQuestion.attributes.filter(attrValue => attrValue.name == attr.name)[0];
           attr.value = (instantAttr != undefined)? instantAttr.value: newAtrr.value;
@@ -33,7 +30,6 @@ document.i =1;
               if(attr.type == 'SelectSpecial'){
                 var callfunction = 'attributeBuilder'+attr.type
                 attr.option  = (instanceQuestion != undefined)? instanceQuestion.options: []; 
-              //  console.log(attr.option)
               }else{
                 var callfunction =  'attributeBuilder'+attr.type.capitalize() ;
                } 
@@ -46,8 +42,6 @@ document.i =1;
  
               }
           } else if (typeof attr.type == 'object') {
-        //    var callfunction = 'attributeBuilder'+attr.type.name.capitalize();
-           // var callfunction = (attr.name.type == 'SelectSpecial') ? 'attributeBuilder'+attr.name.type  : 'attributeBuilder'+attr.type.name.capitalize();
             var callfunction =  'attributeBuilder'+attr.type.name.capitalize();
             if(AttributeBuilder.hasOwnProperty(callfunction) ){
               var O = AttributeBuilder[callfunction];    
@@ -57,10 +51,8 @@ document.i =1;
               fc.create();
               Q.addAttribut(fc); 
             }
-       //     console.log(fc)
-
           }else{
-            throw new Error('Type of Attribute Incorrect ' );
+            throw new Error('Type of Attribute Incorrect must be an array ' );
           }
           newListAttr.push(attr)
           idAttr ++;

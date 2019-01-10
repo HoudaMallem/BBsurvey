@@ -1,4 +1,4 @@
-define(['./bbsurveyBuilder' , 'sortable' , 'draggable' ],  function (bbsurveyBuilder , sortable , draggable) {
+define(['./bbsurveyBuilder' , 'sortable' , 'draggable' , 'jquery' ],  function (bbsurveyBuilder , sortable , draggable , $) {
     document.keyBBs =1;
     var defaults ={
         title : 'BBsurvey ',
@@ -9,8 +9,6 @@ define(['./bbsurveyBuilder' , 'sortable' , 'draggable' ],  function (bbsurveyBui
     };
     var BBsurveyCreate = function( setting){
         this.setting = $.extend( {}, defaults, setting );
-        //this.setting = setting2 ;
-      //  this.bbsurveyBuilder = bbsurveyBuilder;
     }
  BBsurveyCreate.prototype.initBbsurveyBuilder = function () {
         if(this.setting.hasTopics && this.setting.data.hasOwnProperty('source')  ){

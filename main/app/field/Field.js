@@ -1,11 +1,11 @@
-define(function () {
+define(['jquery'] ,function ($) {
     var FieldBase = {
         id : 'id',
         label : 'Question ' ,
         name :'field',
         type :'text',
        
-        attribut : [],
+       // attribut : [],
         attributObjc : [],
         setId : function (id) {
             this.id = id ;
@@ -50,23 +50,16 @@ define(function () {
             return this.parent ;
         },
         showHtmlOf  : function () {
-            let  html =`
-            <a href="#" class="list-group-item list-group-item-action field" name='${this.name}' id="${this.id}"> 
-            <i class="far fa-list-alt mr-3"></i>
-            ${this.label}
-            <span class="badge ${this.color} badge-pill float-right">${this.type}</span>
-          
-            </a>      
-            `;
-            $('#fields-bbsurvey').append( html );
+            var  view ="<a href='#' class='list-group-item list-group-item-action field' name='"+this.name+"' id='"+this.id+"'><i class='far "+this.icon+" mr-3'></i>"
+            view +=  this.label +'<span class="badge '+this.color + ' badge-pill float-right">'+this.type+'</span> </a>';      
+            
+            $('#fields-bbsurvey').append( view );
         }
     };
     var FieldSelect = function(){
 
             this.showHtml = function (Quest) {
-                html=`
-
-                <input type="text" class="form-control  fieldname-${Quest.key}" id="fieldname-${Quest.key}" value="${Quest.value}" placeholder="${this.label}">`;
+                html='<input type="text" class="form-control  fieldname-'+Quest.key+'" id="fieldname-'+Quest.key+'" value="'+Quest.value+'" placeholder="'+this.label+'">';
               return html ;
     
                }
@@ -75,9 +68,7 @@ define(function () {
        FieldSelect.prototype = FieldBase ;
     var FieldText = function(){
         this.showHtml = function (Quest) {
-            html=`
-            <input type="text" class="form-control fieldName-${Quest.key}" id="fieldname-${Quest.key}"  value="${Quest.value}" placeholder="${this.label}">
-          `;
+            html='<input type="text" class="form-control  fieldname-'+Quest.key+'" id="fieldname-'+Quest.key+'" value="'+Quest.value+'" placeholder="'+this.label+'">';
           return html ;
       
         }
@@ -87,9 +78,7 @@ define(function () {
 
     var FieldNumber = function(){
         this.showHtml = function (Quest) {
-            html=`
-            <input type="text" class="form-control fieldName-${Quest.key}" id="fieldname-${Quest.key}" value="${Quest.value}"  placeholder="${this.label}">
-          `;
+            html='<input type="text" class="form-control  fieldname-'+Quest.key+'" id="fieldname-'+Quest.key+'" value="'+Quest.value+'" placeholder="'+this.label+'">';
           return html ;
         }
    
@@ -97,9 +86,7 @@ define(function () {
     FieldNumber.prototype = FieldBase ;
     var FieldMulti = function(){
         this.showHtml = function (Quest) {
-            html=`
-            <input type="text" class="form-control fieldName-${Quest.key}" id="fieldname-${Quest.key}"  value="${Quest.value}" placeholder="${this.label}">
-          `;
+            html='<input type="text" class="form-control  fieldname-'+Quest.key+'" id="fieldname-'+Quest.key+'" value="'+Quest.value+'" placeholder="'+this.label+'">';
           return html ;
         }
    
@@ -107,9 +94,7 @@ define(function () {
     FieldMulti.prototype = FieldBase ;
     var FieldBoolean = function(){
         this.showHtml = function (Quest) {
-            html=`
-            <input type="text" class="form-control fieldName-${Quest.key}" id="fieldname-${Quest.key}" value="${Quest.value}"  placeholder="${this.label}">
-          `;
+            html='<input type="text" class="form-control  fieldname-'+Quest.key+'" id="fieldname-'+Quest.key+'" value="'+Quest.value+'" placeholder="'+this.label+'">';
           return html ;
         }
    
@@ -117,21 +102,27 @@ define(function () {
     FieldBoolean.prototype = FieldBase ;
     var FieldDate = function(){
         this.showHtml = function (Quest) {
-            html=`
-            <input type="text" class="form-control fieldName-${Quest.key}" id="fieldname-${Quest.key}" value="${Quest.value}"  placeholder="${this.label}">
-          `;
+            html='<input type="text" class="form-control  fieldname-'+Quest.key+'" id="fieldname-'+Quest.key+'" value="'+Quest.value+'" placeholder="'+this.label+'">';
           return html ;
         }
    
     };
     FieldDate.prototype = FieldBase ;
-    
+    var FieldFile = function(){
+        this.showHtml = function (Quest) {
+            html='<input type="text" class="form-control  fieldname-'+Quest.key+'" id="fieldname-'+Quest.key+'" value="'+Quest.value+'" placeholder="'+this.label+'">';
+          return html ;
+        }
+   
+    };
+    FieldFile.prototype = FieldBase ;
     return {
         fieldSelect : FieldSelect,
         fieldText : FieldText,
         FieldNumber : FieldNumber,
         FieldMulti : FieldMulti,
         FieldBoolean : FieldBoolean,
-        FieldDate : FieldDate
+        FieldDate : FieldDate,
+        FieldFile : FieldFile
     };
 });

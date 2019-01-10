@@ -1,7 +1,4 @@
-define(['./BBsurvey' ], function (BBsurvey   ) {
-
-   // sortable = require('sortable'),
-   // draggable = require('draggable'),
+define(['./BBsurvey', 'jquery' ], function (BBsurvey , $  ) {
     var Builder = function(){
 
     };
@@ -34,7 +31,12 @@ var showDataWithTopics = function(bbsurvey){
            var topic = $(document).triggerHandler("topicCreate" ,[ bbsurvey , oneTopic.name ]); 
            oneTopic.questions.forEach(function (oneQuestions) {
                var fieldcurrent = bbsurvey.getFieldByType(oneQuestions.type)[0];
-                $(document).triggerHandler("questionCreate",[ fieldcurrent , topic , oneQuestions ]); 
+               if(fieldcurrent != undefined){
+                    $(document).triggerHandler("questionCreate",[ fieldcurrent , topic , oneQuestions ]); 
+               }else{
+                    throw new Error('Type of fields not found in liste of fields !!!!! ' );
+                }
+               
            })
         })  
     }
@@ -43,12 +45,16 @@ var showDataWithoutTopics = function(bbsurvey){
     if(bbsurvey.getSetting().data.hasOwnProperty('source')){
         if(bbsurvey.getRessource().hasOwnProperty('questions')){
          bbsurvey.getRessource().questions.forEach(function (oneQuestions) {
-             console.log(oneQuestions)
+          
                var fieldcurrent = bbsurvey.getFieldByType(oneQuestions.type)[0];
-                $(document).triggerHandler("questionCreate",[ fieldcurrent , bbsurvey , oneQuestions ]); 
+               if(fieldcurrent != undefined){
+                    $(document).triggerHandler("questionCreate",[ fieldcurrent , bbsurvey , oneQuestions ]); 
+                }else{
+                    throw new Error('Type of fields not found in liste of fields !!!!! ' );
+                }
            })
         }else{
-            throw new Error('Ressource not formated we need Questions field ' );
+            throw new Error('Ressource for simple survey require questions property  !!! ' );
         }
     }
 }
@@ -341,11 +347,4 @@ return data;
       bbsurveyWithoutDataBuilder : BbsurveyWithoutDataBuilder,
       bbsurveyWithoutDataWithTopicsBuilder : BbsurveyWithoutDataWithTopicsBuilder
   };
- /*   var BBsurveyBuilder = function(){
-
-        this.bbsurvey = new BBsurvey();
-    };
-    BBsurveyBuilder.prototype = new Builder() ;
-    return this ;
-    */
 });

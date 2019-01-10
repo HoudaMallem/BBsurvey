@@ -1,4 +1,4 @@
-define(['./Topic' ],  function (Topic ) {
+define(['./Topic' , 'jquery' ],  function (Topic , $ ) {
     document.keyTP =1;
     var TopicCreate = function( ){
        // var setting2 = $.extend( {}, defaults, setting );

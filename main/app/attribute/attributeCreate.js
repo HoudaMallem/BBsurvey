@@ -1,4 +1,4 @@
-define(function () {
+define(['jquery'] ,function ($) {
     var defaults ={
         id : 'id',
         label : 'Question ' ,
@@ -8,7 +8,7 @@ define(function () {
         options : []
     }
     var AttributeCreate = function(attributeBuilder , option){
-        let setting = $.extend( {}, defaults, option );
+        var setting = $.extend( {}, defaults, option );
         this.setting = setting ;
         var self = this ;
         this.attributeBuilder = attributeBuilder;
@@ -16,11 +16,11 @@ define(function () {
             
                if($('#'+event.target.id).attr('data-special') == 'add'){
                    if(event.target.value != ''){
-                        let value = event.target.value
+                        var value = event.target.value
                         var key = event.which || event.keyCode;
                         if (key === 13) {
                             //$('#'+event.target.id).parents('.attributSelectSpecial').find('.newOptionSpecialSelect').val()
-                            let newoption = $('<option value="'+event.target.value+'">'+event.target.value+'</option>')
+                            var newoption = $('<option value="'+event.target.value+'">'+event.target.value+'</option>')
                             $('#'+event.target.id).parents('div.attributSelectSpecial').find('select.specialSelectContainer').append(newoption)
                             $('#'+event.target.id).parents('.attributSelectSpecial').find('.newOptionSpecialSelect').val('')
                             self.getAttribute().addOption(value);
@@ -30,7 +30,7 @@ define(function () {
                    }
 
                }else   if($('#'+event.target.id).attr('data-special') == 'delete'){
-                let value = event.target.value
+                var value = event.target.value
 
                          $('#'+event.target.id).parents('div.attributSelectSpecial').find('select.specialSelectContainer option:selected').each(function() {
                             $(document).trigger("removeOptionRelatedAttribute",[$( this ).val()  , self.getAttribute().getParent()]); 
