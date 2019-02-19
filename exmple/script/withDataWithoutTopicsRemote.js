@@ -7,7 +7,7 @@
                         data: {
                           type: "remote" ,
                           source: {
-                            url: "http://houdamallem.ml/api/dataQ.php" ,
+                            url: "https://houdamallem.ml/api/dataQ.php" ,
                             dataType : 'json'
                           }
                         },

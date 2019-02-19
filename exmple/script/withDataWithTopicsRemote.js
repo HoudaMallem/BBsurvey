@@ -6,7 +6,7 @@ var BBsurveywithDataWithTopicsRemoteDemo = function() {
                         data: {
                           type: "remote" ,
                           source: {
-                            url: "http://houdamallem.ml/api/data.php" ,
+                            url: "https://houdamallem.ml/api/data.php" ,
                             dataType : 'json'
                           }
                         },
