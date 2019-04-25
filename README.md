@@ -12,7 +12,7 @@ BBsurvey provides
 npm
    - npm i bbsurvey
 # Documentation 
-<a href='http://houdamallem.ml/BBsurvey/exmple/' target="_blank">Demo </a>
+<a href='http://houdamallem.tk/BBsurvey/exmple/' target="_blank">Demo </a>
 # Usage
 - header 
 ```html
