@@ -40,7 +40,7 @@ npm
         </div>   
 ```
 
-# build simple generator 
+# build a simple generator 
 ```javascript
     $('#bbsurvey').survey({
         title : 'title' ,
