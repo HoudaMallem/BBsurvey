@@ -42,7 +42,7 @@ npm
 
 # build simple generator 
 ```javascript
-    $('#BBsurvey').survey({
+    $('#bbsurvey').survey({
         title : 'title' ,
         hasTopics : false,
         fields : [],
