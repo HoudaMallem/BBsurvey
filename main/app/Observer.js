@@ -6,7 +6,7 @@ define([ 'app/questionCreate', 'app/topicCreate' , 'jquery' ], function ( questi
 * 
 * @param {*} doc 
 * @param {event object} event 
-* @param {question that setted his name } question 
+* @param {the question  } question 
 */
       var addGroupeOptionRelatedAttribute = function( doc , event, question){
         var idGP = 'GP'+question.key
