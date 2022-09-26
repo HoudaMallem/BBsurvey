@@ -26,7 +26,7 @@ define([ 'app/questionCreate', 'app/topicCreate' , 'jquery' ], function ( questi
 * 
 * @param {*} doc 
 * @param {value of option add} value 
-* @param {select question whene we add an option} question 
+* @param {the question} question 
 */     
       var addOptionRelatedAttribute = function(doc , value ,  question){
          $('.GP'+question.key).append($('<option  class="OPs'+question.key+'" value="'+value+'"> '+value+'</option>'))
@@ -36,7 +36,7 @@ define([ 'app/questionCreate', 'app/topicCreate' , 'jquery' ], function ( questi
 * 
 * @param {*} doc 
 * @param {value of option removed} value 
-* @param  {select question whene we remove  an option} question 
+* @param  {the question} question 
 */   
       var removeOptionRelatedAttribute = function(doc , value ,  question ){
         $('.GP'+question.key).find('option').each(function() {
@@ -49,7 +49,7 @@ define([ 'app/questionCreate', 'app/topicCreate' , 'jquery' ], function ( questi
   /**
    * 
    * @param {object event} event 
-   * @param {field used to ceate question in box of questions } fieldcurrent 
+   * @param {field used to ceate a question } fieldcurrent 
    */
   var createQuestion = function( event , fieldcurrent , parent , instanteQuestions){
 
@@ -88,7 +88,7 @@ define([ 'app/questionCreate', 'app/topicCreate' , 'jquery' ], function ( questi
   /**
    * 
    * @param {object event} event 
-   * @param {field used to ceate question in box of questions } fieldcurrent 
+   * @param {field used to ceate question } fieldcurrent 
    */
   var handleTopic = function( event , parent , name ){
       if(name !=''){
